@@ -1,3 +1,35 @@
+/**$*$********************************************************************
+*$*$                         ELEMENTOS - TAG                             *
+*$*$**********************************************************************/
+body {
+  font-family: "Fira Sans", sans-serif;
+  background-color: #f3efef;
+}
+
+h1 {
+  color: #464646;
+}
+
+h2 {
+  color: #464646;
+}
+
+h3 {
+  color: #525151;
+}
+
+p {
+  line-height: 1.5;
+  font-size: 17px;
+  font-weight: 200;
+}
+
+.separador {
+  width: 100%;
+  height: auto;
+  margin-top: 30px;
+}
+
 .App {
   text-align: center;
 }
