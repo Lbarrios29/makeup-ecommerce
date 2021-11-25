@@ -21,13 +21,23 @@
 //     }
 // });
 
+import Esponja from '../images/carritoMakeup/Esponja.jpeg'
+import Brocha  from '../images/carritoMakeup/brocha.jpg'
+import Paleta from '../images/carritoMakeup/paletaSombras2.jpeg'
+import Iluminador from '../images/carritoMakeup/iluminador.jpg'
+import Paleta2 from '../images/carritoMakeup/paletaSombras.png'
+import Micelar from '../images/carritoMakeup/micelar.jpg'
+import Corrector from '../images/carritoMakeup/corrector.jpg'
+import Paleta3 from '../images/carritoMakeup/paleta.jpg'
+import Flame from '../images/carritoMakeup/paletaSombras3.jpg'
+
 const productos = [
                 {
                     id:"1000",
                     nombre:"Esponja Soft Blender",
                     precio:503,
-                    stock: 100,
-                    srcImagen:"../images/carritoMakeup/Esponja.jpeg",
+                    stock: 5,
+                    srcImagen:Esponja,
                     alt:"Esponja de Maquillaje"
                 },
                 {
@@ -35,7 +45,7 @@ const productos = [
                     nombre:"Brocha Powder Blush",
                     precio:534,
                     stock: 100,
-                    srcImagen:"../images/carritoMakeup/brocha.jpg",
+                    srcImagen:Brocha,
                     alt:"Brocha de Maquillaje parpados"
                 },
                 {
@@ -43,7 +53,7 @@ const productos = [
                     nombre:"Paleta de sombras Cosmos",
                     precio:2544,
                     stock: 100,
-                    srcImagen:"../images/carritoMakeup/paletaSombras2.jpeg",
+                    srcImagen:Paleta,
                     alt:"Maquillaje casual"
                 },
                 {
@@ -51,7 +61,7 @@ const productos = [
                     nombre:"Iluminador Backet perolado",
                     precio:817,
                     stock: 100,
-                    srcImagen:"../images/carritoMakeup/iluminador.jpg",
+                    srcImagen:Iluminador,
                     alt:"Iluminador Maquillaje"
                 },
                 {
@@ -59,7 +69,7 @@ const productos = [
                     nombre:"Mini paletas Raimbow",
                     precio:1100,
                     stock: 100,
-                    srcImagen:"../images/carritoMakeup/paletaSombras.png",
+                    srcImagen:Paleta2,
                     alt:"Paleta Maquillaje"
                 },
                 {
@@ -67,7 +77,7 @@ const productos = [
                     nombre:"Agua Micelar 200ml",
                     precio:800,
                     stock: 100,
-                    srcImagen:"../images/carritoMakeup/micelar.jpg",
+                    srcImagen:Micelar,
                     alt:"Micelar Maquillaje"
                 },
                 {
@@ -75,7 +85,7 @@ const productos = [
                     nombre:"Corrector líquido",
                     precio:604,
                     stock: 100,
-                    srcImagen:"../images/carritoMakeup/corrector.jpg",
+                    srcImagen:Corrector,
                     alt:"Corrector Maquillaje"
                 },
                 {
@@ -83,7 +93,7 @@ const productos = [
                     nombre:"Paleta Soft Nude",
                     precio:1990,
                     stock: 100,
-                    srcImagen:"../images/carritoMakeup/paleta.jpg",
+                    srcImagen:Paleta3,
                     alt:"Paleta de Maquillaje casamiento"
                 },
                 {
@@ -91,7 +101,7 @@ const productos = [
                     nombre:"Paleta Flame",
                     precio:1000,
                     stock: 100,
-                    srcImagen:"../images/carritoMakeup/paletaSombras3.jpg",
+                    srcImagen:Flame,
                     alt:"Paleta de Maquillaje casamiento"
                 }                                                                                                                                
             ];

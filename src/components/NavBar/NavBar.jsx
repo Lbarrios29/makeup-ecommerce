@@ -2,6 +2,7 @@ import React from 'react';
 import CartWidget from './CartWidget';
 import '../NavBar/navBar.css';
 import Logo from "./images/logodiaz.png";
+import {Link} from 'react-router-dom'
 
 function NavBar() {
     return (
@@ -11,10 +12,12 @@ function NavBar() {
                 <div className="container">
 
                     {/* <!-- Logo --> */}
-                    <a className="navbar-brand ms-3" href="index.html">
-                        <img src={Logo} alt="logo"
-                            className="logo__img--center wow animate__animated animate__flipInX"/>
-                    </a>
+                    <Link to='/'>
+                        <a className="navbar-brand ms-3" href="index.html">
+                            <img src={Logo} alt="logo"
+                                className="logo__img--center wow animate__animated animate__flipInX"/>
+                        </a>
+                    </Link>
 
                     {/* <!-- Boton Hamburguesa --> */}
                     <button className="navbar-toggler custom-toggler me-4 wow animate__animated animate__bounceInDown"
@@ -26,36 +29,46 @@ function NavBar() {
                     {/* <!-- Menu listado de opciones --> */}
                     <div className="collapse navbar-collapse pe-5" id="navbarNav">
                         <ul id="menuHeader" className="navbar-nav ms-auto">
-                            <li className="nav-item">
-                                <a className="nav-link fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown"
-                                    href="index.html" data-wow-delay="0.2s">
-                                    Home
-                                </a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link  fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown"
-                                    href="html/nosotros.html" data-wow-delay="0.3s">
-                                    Nosotros
-                                </a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link  fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown"
-                                    href="html/servicios.html" data-wow-delay="0.4s">
-                                    Servicios
-                                </a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link  fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown"
-                                    href="html/galeria.html" data-wow-delay="0.5s">
-                                    Galería
-                                </a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link  fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown"
-                                    href="html/contacto.html" data-wow-delay="0.6s">
-                                    Contacto
-                                </a>
-                            </li> 
+                            <Link to='/'>
+                                <li className="nav-item">
+                                    <a className="nav-link fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown"
+                                        href="index.html" data-wow-delay="0.2s">
+                                        Home
+                                    </a>
+                                </li>
+                            </Link>
+                            <Link to='/nosotros'>
+                                <li className="nav-item">
+                                    <a className="nav-link  fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown"
+                                        href="html/nosotros.html" data-wow-delay="0.3s">
+                                        Nosotros
+                                    </a>
+                                </li>
+                            </Link>
+                            <Link to='/servicios'>
+                                <li className="nav-item">
+                                    <a className="nav-link  fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown"
+                                        href="html/servicios.html" data-wow-delay="0.4s">
+                                        Servicios
+                                    </a>
+                                </li>
+                            </Link>
+                            <Link to='/galeria'>
+                                <li className="nav-item">
+                                    <a className="nav-link  fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown"
+                                        href="html/galeria.html" data-wow-delay="0.5s">
+                                        Galería
+                                    </a>
+                                </li>
+                            </Link>
+                            <Link to='/contacto'>
+                                <li className="nav-item">
+                                    <a className="nav-link  fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown"
+                                        href="html/contacto.html" data-wow-delay="0.6s">
+                                        Contacto
+                                    </a>
+                                </li> 
+                            </Link>
                         </ul>
                     </div>
                     < CartWidget />
