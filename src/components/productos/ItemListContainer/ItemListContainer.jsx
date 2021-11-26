@@ -1,8 +1,9 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { getProductos } from '../../utils/getProductos'
-import { onAddShoppingCart } from '../../utils/events'
-import Item from '../Item/Item'
+import { getProductos } from '../../../utils/getProductos'
+import { onAddShoppingCart } from '../../../utils/events'
+// import Item from '../Item/Item'
+import ItemList from '../ItemList/ItemList'
 
 function ItemListContainer() {
 
@@ -39,9 +40,7 @@ function ItemListContainer() {
                         {/* Arma lista de items de producto */}
                         { 
                             loading ? <h2>Cargando...</h2> 
-                                    :productos.map(producto => <Item key={producto.id}
-                                                                     producto={producto} 
-                                                                     onAddShoppingCart={onAddShoppingCart}/>)
+                                    : <ItemList productos={productos} onAddShoppingCart={onAddShoppingCart}/>
                         }
 
                     </div>

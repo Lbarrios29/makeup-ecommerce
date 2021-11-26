@@ -1,26 +1,3 @@
-// const URL_JSON_LOCAL = "../data/productos.json"
-
-// Vanilla JS
-// export const getFetch = new Promise((resolve, reject) => {
-//     fetch(URL_JSON_LOCAL)
-//         .then(response => {
-//             resolve(response.json())
-//         }).catch(err => {
-//             reject(err)
-//         })
-// })
-
-// console.log(getFetch)  
-
-// JQUERY
-// Se obtiene los productos del archivo .json cargado localmente
-// let productos = [];
-// $.getJSON(URL_JSON_LOCAL, function (respuesta, estado) {
-//     if(estado === "success"){
-//         productos = respuesta;
-//     }
-// });
-
 import Esponja from '../images/carritoMakeup/Esponja.jpeg'
 import Brocha  from '../images/carritoMakeup/brocha.jpg'
 import Paleta from '../images/carritoMakeup/paletaSombras2.jpeg'
