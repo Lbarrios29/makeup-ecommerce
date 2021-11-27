@@ -15,8 +15,8 @@ function ItemListContainer() {
         //api Fetch()
         getProductos    
         .then(data => {   
-                setProductos(data)   
-                console.log(data)  
+            setProductos(data) 
+            console.log(data)  
         })
         .catch(err => console.log(err))    
         .finally(()=> setLoading(false))

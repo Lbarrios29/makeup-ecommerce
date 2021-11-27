@@ -7,50 +7,72 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 function ItemDetailContainer() {
 
     const [itemSeleccionado, setItemSeleccionado]= useState({}); 
+    // const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(true);
 
-    const { itemId } = useParams(); //toma el parametro de la url y lo guarda en una variable id.
+    const { id } = useParams(); //toma el parametro de la url y lo guarda en una variable id.
+
+    // useEffect(() => {
+                
+    //     getProductos    
+    //     .then((data) => {
+    //         setProductos(data)
+    //     })
+    //     .catch(err => console.log(err))    
+    //     .finally(()=> setLoading(false))
+
+    // }, [])
 
     useEffect(() => {
+
+        //api Fetch()
+        getProductos    
+        .then(data => {   
+            const item = data.find(producto => producto.id === id)
+            setItemSeleccionado(item)
+        })
+        .catch(err => console.log(err))    
+        .finally(()=> setLoading(false))
         
-        // const itemSeleccionadoPromise = new Promise ((aceptado, rechazado)=> {
+        // return () => {
+        //     console.log('clean')
+        // }
+    },[id])
+
+    // useEffect(()=>{
+
+    //     const itemSeleccionadoPromise = new Promise ((aceptado, rechazado)=> {
             
-            setTimeout(()=> {
-                
-                getProductos    
-                .then(productos => {   
-                    console.log(productos)
-                    productos.find(producto => producto.id === itemId )   
-                })
-                .then((prodEncontrado)=>{
-                    console.log(prodEncontrado);
-                    setItemSeleccionado(prodEncontrado) 
-                })
-                .catch(err => console.log(err))    
-                .finally(()=> setLoading(false))
+    //         setTimeout(()=> {
+    //             console.log(id)
+    //             console.log(productos)
+    //               aceptado(productos.find(producto => producto.id === id))   
+    //         }, 4000)
+        
+    //     })
 
-            }, 1000)
+    //     itemSeleccionadoPromise
+    //     .then((prodEncontrado)=>{
+    //         console.log("ProductoEncontrado")
+    //         console.log(prodEncontrado)
+    //         setItemSeleccionado(prodEncontrado) 
+    //     })
+    //     .catch(err => console.log(err))    
+    //     .finally(()=> setLoading(false))
 
-        // })
-
-    }, [itemId])
+    // },[id])
 
     return (
-        <>
-            <p style={{fontSize: 20, color: "black"}}> 
-                Lista 
-            </p>
-            <div style={{display: 'flex',
+        <div className="container-sm container-md container-lg">
+            {/* <div style={{display: 'flex',
                     flexDirection: 'row',
-                    alignItems: 'center'}}>
-                {loading 
-                    ? 
-                <h1>Está ejecutandose la promesa del detalle</h1> 
-                    : 
-                    <ItemDetail item={itemSeleccionado}/>
-                    }
-            </div>
-        </>
+                    alignItems: 'center'}}> */}
+                {
+                    loading ? <h2>Cargando...</h2> 
+                            : <ItemDetail item={itemSeleccionado}/>
+                }
+            {/* </div> */}
+        </div>
     )
 }
 

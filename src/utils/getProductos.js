@@ -87,7 +87,7 @@ export const getProductos = new Promise((aceptado, rechazada)=>{
     //Acciones todo ok 
     setTimeout(() => {
         aceptado(productos)        
-    }, 3000);
+    }, 2000);
     //rechazada('400 not found')
 })
 

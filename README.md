@@ -7,6 +7,7 @@ _El sitio se basa en todo lo relacionado a la industria del maquillaje agregando
 _Página Home: Es la sección principal del sitio detalla brevemente todo el sitio._
 _Página Nosotros: Se conoce a la fundadora y empleados con una breve descripción._
 _Página Servicios: Presenta todos los servicios que se brinda(Catalogo de productos)._
+_Página Prductos: Presenta todos los productos._
 _Página Galería: Muestra imágenes de los trabajos realizados con enlace a Instagram al dar click._
 _Página Contacto: Brinda un formulario para contacto. Ademas de un icono fijo Whatsapp para mensaje por esa aplicacion._
 
@@ -22,7 +23,7 @@ _Menciona las herramientas que utilizaste para crear tu proyecto_
 - [ANIMATED](https://animate.style/) - Usado para generar animaciones
 - [WOW](https://wowjs.uk/docs.html) - Usado para generar animaciones
 - [UNIVERSALPARALLAX](https://github.com/marrio-h/universal-parallax) - Usado para el efecto parallax
-- [REACT] - Código en React
+- [REACT](https://reactjs.org/) - Código en React
 
 ## Autores ✒️
 
