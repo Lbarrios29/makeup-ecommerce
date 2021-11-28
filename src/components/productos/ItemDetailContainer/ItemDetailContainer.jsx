@@ -7,21 +7,9 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 function ItemDetailContainer() {
 
     const [itemSeleccionado, setItemSeleccionado]= useState({}); 
-    // const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(true);
 
     const { id } = useParams(); //toma el parametro de la url y lo guarda en una variable id.
-
-    // useEffect(() => {
-                
-    //     getProductos    
-    //     .then((data) => {
-    //         setProductos(data)
-    //     })
-    //     .catch(err => console.log(err))    
-    //     .finally(()=> setLoading(false))
-
-    // }, [])
 
     useEffect(() => {
 
@@ -39,39 +27,14 @@ function ItemDetailContainer() {
         // }
     },[id])
 
-    // useEffect(()=>{
-
-    //     const itemSeleccionadoPromise = new Promise ((aceptado, rechazado)=> {
-            
-    //         setTimeout(()=> {
-    //             console.log(id)
-    //             console.log(productos)
-    //               aceptado(productos.find(producto => producto.id === id))   
-    //         }, 4000)
-        
-    //     })
-
-    //     itemSeleccionadoPromise
-    //     .then((prodEncontrado)=>{
-    //         console.log("ProductoEncontrado")
-    //         console.log(prodEncontrado)
-    //         setItemSeleccionado(prodEncontrado) 
-    //     })
-    //     .catch(err => console.log(err))    
-    //     .finally(()=> setLoading(false))
-
-    // },[id])
-
     return (
         <div className="container-sm container-md container-lg">
-            {/* <div style={{display: 'flex',
-                    flexDirection: 'row',
-                    alignItems: 'center'}}> */}
-                {
-                    loading ? <h2>Cargando...</h2> 
-                            : <ItemDetail item={itemSeleccionado}/>
-                }
-            {/* </div> */}
+
+            {
+                loading ? <h2>Cargando...</h2> 
+                        : <ItemDetail item={itemSeleccionado}/>
+            }
+
         </div>
     )
 }

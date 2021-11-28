@@ -15,7 +15,8 @@ const productos = [
                     precio:503,
                     stock: 5,
                     srcImagen:Esponja,
-                    alt:"Esponja de Maquillaje"
+                    alt:"Esponja de Maquillaje",
+                    categoriaId:"maquillaje"
                 },
                 {
                     id:"1001",
@@ -23,7 +24,8 @@ const productos = [
                     precio:534,
                     stock: 100,
                     srcImagen:Brocha,
-                    alt:"Brocha de Maquillaje parpados"
+                    alt:"Brocha de Maquillaje parpados",
+                    categoriaId:"maquillaje"
                 },
                 {
                     id:"1002",
@@ -31,7 +33,8 @@ const productos = [
                     precio:2544,
                     stock: 100,
                     srcImagen:Paleta,
-                    alt:"Maquillaje casual"
+                    alt:"Maquillaje casual",
+                    categoriaId:"maquillaje"
                 },
                 {
                     id:"1003",
@@ -39,7 +42,8 @@ const productos = [
                     precio:817,
                     stock: 100,
                     srcImagen:Iluminador,
-                    alt:"Iluminador Maquillaje"
+                    alt:"Iluminador Maquillaje",
+                    categoriaId:"maquillaje"
                 },
                 {
                     id:"1004",
@@ -47,7 +51,8 @@ const productos = [
                     precio:1100,
                     stock: 100,
                     srcImagen:Paleta2,
-                    alt:"Paleta Maquillaje"
+                    alt:"Paleta Maquillaje",
+                    categoriaId:"maquillaje"
                 },
                 {
                     id:"1005",
@@ -55,7 +60,8 @@ const productos = [
                     precio:800,
                     stock: 100,
                     srcImagen:Micelar,
-                    alt:"Micelar Maquillaje"
+                    alt:"Micelar Maquillaje",
+                    categoriaId:"maquillaje"
                 },
                 {
                     id:"1006",
@@ -63,7 +69,8 @@ const productos = [
                     precio:604,
                     stock: 100,
                     srcImagen:Corrector,
-                    alt:"Corrector Maquillaje"
+                    alt:"Corrector Maquillaje",
+                    categoriaId:"maquillaje"
                 },
                 {
                     id:"1007",
@@ -71,7 +78,8 @@ const productos = [
                     precio:1990,
                     stock: 100,
                     srcImagen:Paleta3,
-                    alt:"Paleta de Maquillaje casamiento"
+                    alt:"Paleta de Maquillaje casamiento",
+                    categoriaId:"maquillaje"
                 },
                 {
                     id:"1008",
@@ -79,7 +87,8 @@ const productos = [
                     precio:1000,
                     stock: 100,
                     srcImagen:Flame,
-                    alt:"Paleta de Maquillaje casamiento"
+                    alt:"Paleta de Maquillaje casamiento",
+                    categoriaId:"maquillaje"
                 }                                                                                                                                
             ];
 

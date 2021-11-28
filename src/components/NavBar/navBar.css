@@ -13,6 +13,7 @@ header{
     cursor: pointer;
     transform: scale(1.2, 1.2);
 }
+
 /**$*$*****************************************************************
 *$*$                         LOGO                                     *
 *$*$*******************************************************************/
@@ -39,6 +40,10 @@ header{
 .menuSecciones:hover {
     color: #2a77d6 !important;
     transform: scale(1.1, 1.1);
+}
+
+.hoverOpciones:hover {
+    background-color: #2a77d6 !important;
 }
 
 /**$*$********************************************************************

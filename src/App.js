@@ -20,7 +20,7 @@ function App() {
           <Route exact path='/' element= { <Home/> } />
           <Route exact path='/nosotros' element= { <Nosotros/> } />
           <Route exact path='/servicios' element= { <Servicios/> } />
-          <Route exact path='/productos' element= { <Productos/> } />
+          <Route exact path='/productos/:categoriaId' element= { <Productos/> } />
           <Route exact path='/detalle/:id' element= { <ItemDetailContainer/> } />
           <Route exact path='/galeria' element= { <Galeria/> } />
           <Route exact path='/contacto' element= { <Contacto/> } />

@@ -72,7 +72,7 @@ function NavBar() {
                                 </li>
                             </Link>
 
-                            <Link to='/productos' className="text-decoration-none">
+                            {/* <Link to='/productos' className="text-decoration-none">
                                 <li className="nav-item">
                                     <a className="nav-link  fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown"
                                        href="html/servicios.html" 
@@ -80,8 +80,39 @@ function NavBar() {
                                         Productos
                                     </a>
                                 </li>
-                            </Link>
+                            </Link> */}
                             
+                            <li className="nav-item dropdown ">
+                                <a className="nav-link dropdown-toggle fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown" 
+                                   href="home" 
+                                   id="navbarDropdown" 
+                                   role="button" 
+                                   data-bs-toggle="dropdown" 
+                                   aria-expanded="false">
+                                    Productos
+                                </a>
+                                <ul className="dropdown-menu bg-dark" 
+                                    aria-labelledby="navbarDropdown">
+
+                                    <Link to='/productos/maquillaje'
+                                          className="text-decoration-none">    
+                                        <li>
+                                            <a className="dropdown-item text-white hoverOpciones" href="test">
+                                                Maquillaje
+                                            </a>
+                                        </li>
+                                    </Link>
+
+                                    <Link to='/productos/uñas' className="text-decoration-none">
+                                        <li>
+                                            <a className="dropdown-item text-white hoverOpciones" href="test">
+                                                Uñas
+                                            </a>
+                                        </li>
+                                    </Link>
+                                </ul>
+                            </li>
+
                             <Link to='/galeria' className="text-decoration-none">
                                 <li className="nav-item">
                                     <a className="nav-link  fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown"
