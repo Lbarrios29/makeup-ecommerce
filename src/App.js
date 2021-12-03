@@ -9,11 +9,15 @@ import Productos from './components/productos/ItemListContainer/ItemListContaine
 import Galeria from './components/galeria/GaleriaListContainer/GaleriaListContainer';
 import Contacto from './components/contacto/Contacto';
 import ItemDetailContainer from './components/productos/ItemDetailContainer/ItemDetailContainer';
-// import {CartContext} from './context/CartContext'
+import CartContextProvider from './context/CartContext'
+// import Cart from './components/carritoCompras/cart/Cart';
+import ItemCartContext from './components/carritoCompras/ItemCartContext/ItemCartContext';
+import TerminarCompra from './components/carritoCompras/TerminarCompra/TerminarCompra';
 
 function App() {
   return (
-    // <CartContext.Provider value={{}}>
+
+    <CartContextProvider>
       <BrowserRouter>
         <NavBar />
         <Routes>
@@ -24,11 +28,12 @@ function App() {
           <Route exact path='/detalle/:id' element= { <ItemDetailContainer/> } />
           <Route exact path='/galeria' element= { <Galeria/> } />
           <Route exact path='/contacto' element= { <Contacto/> } />
-          
-          {/* <Cart/>   */}
+          <Route exact path='/cart' element= { <ItemCartContext/> } />
+          <Route exact path='/terminarCompra' element= { <TerminarCompra/> } />
         </Routes>
       </BrowserRouter>
-    // {/* </CartContext.Provider> */}
+    </CartContextProvider>
+
   );
 }
 
