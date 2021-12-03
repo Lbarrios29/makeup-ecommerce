@@ -34,7 +34,7 @@ function Cart(props) {
             
                 {/* <!-- Cantidad --> */}
                 <div className="col">
-                    <ItemCount stock={props.item.item.stock}/> 
+                    <ItemCount id={props.item.item.id} stock={props.item.item.stock} initial={props.cantidad} fromCart={true}/> 
                                {/* count={props.item.cantidad}/>  */}
                     <span className="fs-6">
                         {props.item.item.stock} disponibles

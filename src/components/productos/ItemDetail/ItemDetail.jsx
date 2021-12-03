@@ -47,7 +47,7 @@ function ItemDetail(props) {
 
                 {/* Contador */}
                 <div className="w-75 mt-3">
-                    <ItemCount stock={props.item.stock} onAdd={()=>onAdd(count)}/>
+                    <ItemCount id={props.item.id} stock={props.item.stock} onAdd={onAdd} initial={1}/>
                 </div>
 
                 {/* Stock */}
