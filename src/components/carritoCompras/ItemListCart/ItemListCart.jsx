@@ -36,7 +36,6 @@ function ItemListCart(props) {
                 props.items.map(item => <Cart key={item.id}
                                               item={item}
                                               cantidad={item.cantidad}/>
-                                            //   eliminarItem={props.eliminarItem}/>
                 )   
             }
 
@@ -85,18 +84,6 @@ function ItemListCart(props) {
                         </div>
 
                     </div>
-                    
-                    {/* <div className="col-2">
-                        <Link to='/terminarCompra'>
-                            <button type="button" 
-                                    onClick={onAddComprarAhora} 
-                                    className="btn btn-dark w-100">
-                                    
-                                Terminar compra
-                                
-                            </button>
-                        </Link>
-                    </div> */}
                     
                 </div>
 

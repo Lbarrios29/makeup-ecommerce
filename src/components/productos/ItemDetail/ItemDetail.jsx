@@ -1,7 +1,6 @@
 import {useState} from 'react'
 import ItemCount from '../ItemCount/ItemCount'
 import './itemDetail.css'
-// import {onAddShoppingCart} from '../../../utils/events'
 import {onAddComprarAhora} from '../../../utils/events'
 import { useCartContext } from '../../../context/CartContext'
 import { Link } from 'react-router-dom'
@@ -9,7 +8,6 @@ import { Link } from 'react-router-dom'
 function ItemDetail(props) {
 
     console.log("ItemDetail")
-    // const { agregarProducto, count } = useCartContext()
     const { agregarProducto } = useCartContext()
     const [count, setCount] = useState(1)    
     
@@ -26,6 +24,7 @@ function ItemDetail(props) {
     }
     
     return (
+
         <div className="row m-5">
             
             {/* Imagen Producto */}
@@ -47,7 +46,8 @@ function ItemDetail(props) {
 
                 {/* Contador */}
                 <div className="w-75 mt-3">
-                    <ItemCount stock={props.item.stock} onAdd={()=>onAdd(count)}/>
+                    {/* <ItemCount stock={props.item.stock} onAdd={()=>onAdd(count)}/> */}
+                    <ItemCount id={props.item.id} stock={props.item.stock} onAdd={onAdd} initial={1}/>
                 </div>
 
                 {/* Stock */}

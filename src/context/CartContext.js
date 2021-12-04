@@ -3,93 +3,68 @@ import { createContext, useState, useContext } from "react";
 // Se crea el contexto
 const CartContext = createContext([]);
 
-// Pasa el contexto creado por referencia
-export const  useCartContext = ( )=> useContext(CartContext)
+export const useCartContext = () => useContext(CartContext);
 
-function CartContextProvider ({children}) {
-  
-    const [cartList, setCartList] = useState([])
-    const [count, setCount] = useState(1);
-    const [idDelete, setIdDelete] = useState(1);
+function CartContextProvider({ children }) {
 
-    const agregarProducto = (item)=>{
+	const [cartList, setCartList] = useState([]);
+	const [count, setCount] = useState(1);
+	const [idDelete, setIdDelete] = useState(1);
 
-        console.log("agregarProducto")
-        console.log(item)
-        let index = isInCart(item.item.id)
+	const agregarProducto = (item) => {
 
-        // Si existe el item no lo agrega de nuevo
-        if (index < 0) {
-            setCartList( [...cartList, item] )
-        }
-        
-    }
+		console.log("agregarProducto");
+		console.log(item);
+		let index = isInCart(item.item.id);
 
-    const isInCart = (id) => {
+		// Si existe el item no lo agrega de nuevo
+		if (index < 0) {
+			setCartList([...cartList, item]);
+		}
 
-        let auxCarrito = cartList
-        const index = auxCarrito.findIndex( lista => lista.item.id === id )    
+	};
 
-        return index
+	const isInCart = (id) => {
 
-    }
+		let auxCarrito = cartList;
+		const index = auxCarrito.findIndex((lista) => lista.item.id === id);
 
-    const vaciarCarrito = ()=>{
-        setCartList([])
-    }
+		return index;
+	};
 
-    const eliminarItem = (id)=>{
+	const vaciarCarrito = () => {
+		setCartList([]);
+	};
 
-        console.log('eliminarItem')
-        let auxCarrito = cartList
-        let index = isInCart(id)
+	const eliminarItem = (id) => {
 
-        if (index >= 0 ) {
-            // const index = auxCarrito.findIndex( lista => lista.item.id === id ) 
-            auxCarrito.splice(index, 1)
-            setIdDelete(id)
-        }
+		console.log("eliminarItem");
+		let auxCarrito = cartList;
+		let index = isInCart(id);
 
-        setCartList(auxCarrito)
+		if (index >= 0) {
+			auxCarrito.splice(index, 1);
+			setIdDelete(id);
+		}
 
-    }
+		setCartList(auxCarrito);
+	};
 
-    // const sumar = (stock) => {
+	return (
 
-    //     console.log("Sumar")
-    //     console.log(count)
-    //     console.log(stock)
-    //     if (count < stock) {
-    //         setCount(count + 1)  
-    //     }
-    //     console.log(count)
-        
-    // }
-
-    // const restar = () => {
-
-    //     if (count > 1) {
-    //         setCount(count - 1)
-    //     }
-    // }
-
-    return(
-
-        <CartContext.Provider value={ { cartList, 
-                                        agregarProducto, 
+		<CartContext.Provider value={{  cartList,
+                                        agregarProducto,
+                                        setCartList,
                                         vaciarCarrito,
                                         eliminarItem,
                                         count,
                                         setCount,
                                         idDelete,
-                                        setIdDelete
-                                        // sumar,
-                                        // restar 
-        } }>
-            {children}
-        </CartContext.Provider>
+                                        setIdDelete}}>
+			{children}
+		</CartContext.Provider>
 
-    )
+	);
 
 }
 

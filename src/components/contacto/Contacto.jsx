@@ -1,5 +1,5 @@
 import React from 'react'
-import '../contacto/contacto.css' 
+import './contacto.css'
 
 function Contacto() {
     return (
@@ -90,7 +90,7 @@ function Contacto() {
                 </section>    
             </main>
 
-            <div classNameName="separador"></div>
+            <div className="separador"></div>
         </>
     )
 }
