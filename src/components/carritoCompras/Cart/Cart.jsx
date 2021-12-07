@@ -5,13 +5,21 @@ import { useCartContext } from '../../../context/CartContext'
 function Cart(props) {
 
     console.log("Cart")
-    const { eliminarItem, setIdDelete } = useCartContext()
+    const { eliminarItem, setIdDelete,cartList,setItemsCounter } = useCartContext()
 
     function onDelete(id) {
 
         console.log("onDelete")
-        setIdDelete(id)
+        console.log(id)
         eliminarItem( id )
+        setIdDelete(id)
+        
+        // Si al eliminar los items no queda nada pone el contador de items en 0
+		console.log(cartList.length)
+		
+        if (cartList.length === 0) {
+			setItemsCounter(0)
+		}
     
     }
 

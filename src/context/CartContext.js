@@ -8,18 +8,19 @@ export const useCartContext = () => useContext(CartContext);
 function CartContextProvider({ children }) {
 
 	const [cartList, setCartList] = useState([]);
-	const [count, setCount] = useState(1);
+	// const [count, setCount] = useState(1);
 	const [idDelete, setIdDelete] = useState(1);
+	const [itemsCounter, setItemsCounter] = useState(0)
 
 	const agregarProducto = (item) => {
 
 		console.log("agregarProducto");
-		console.log(item);
 		let index = isInCart(item.item.id);
 
 		// Si existe el item no lo agrega de nuevo
 		if (index < 0) {
 			setCartList([...cartList, item]);
+			setItemsCounter(itemsCounter + item.cantidad)
 		}
 
 	};
@@ -34,6 +35,7 @@ function CartContextProvider({ children }) {
 
 	const vaciarCarrito = () => {
 		setCartList([]);
+		setItemsCounter(0)
 	};
 
 	const eliminarItem = (id) => {
@@ -43,12 +45,26 @@ function CartContextProvider({ children }) {
 		let index = isInCart(id);
 
 		if (index >= 0) {
+
+			if ( itemsCounter > cartList[index].cantidad ) {
+				setItemsCounter(itemsCounter - cartList[index].cantidad)
+			} 
+			
 			auxCarrito.splice(index, 1);
 			setIdDelete(id);
+		
 		}
 
 		setCartList(auxCarrito);
+
 	};
+
+	const terminarCompra = () => {
+
+		setCartList([]);
+		setItemsCounter(0)
+
+	}
 
 	return (
 
@@ -57,10 +73,13 @@ function CartContextProvider({ children }) {
                                         setCartList,
                                         vaciarCarrito,
                                         eliminarItem,
-                                        count,
-                                        setCount,
+                                        // count,
+                                        // setCount,
                                         idDelete,
-                                        setIdDelete}}>
+                                        setIdDelete,
+										itemsCounter,
+										setItemsCounter,
+										terminarCompra }}>
 			{children}
 		</CartContext.Provider>
 

@@ -71,16 +71,6 @@ function NavBar() {
                                     </a>
                                 </li>
                             </Link>
-
-                            {/* <Link to='/productos' className="text-decoration-none">
-                                <li className="nav-item">
-                                    <a className="nav-link  fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown"
-                                       href="html/servicios.html" 
-                                       data-wow-delay="0.5s">
-                                        Productos
-                                    </a>
-                                </li>
-                            </Link> */}
                             
                             <li className="nav-item dropdown ">
                                 <a className="nav-link dropdown-toggle fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown" 

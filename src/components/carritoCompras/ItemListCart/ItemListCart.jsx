@@ -1,6 +1,6 @@
 import React from 'react'
 import Cart from '../Cart/Cart'
-import { onAddComprarAhora } from '../../../utils/events'
+// import { onAddComprarAhora } from '../../../utils/events'
 import { useCartContext } from '../../../context/CartContext'
 import { Link } from 'react-router-dom'
 
@@ -8,7 +8,7 @@ function ItemListCart(props) {
     
     console.log("ItemListCart")
 
-    const {vaciarCarrito} = useCartContext()
+    const {vaciarCarrito, terminarCompra} = useCartContext()
     let total = 0
 
     function onClearCart() {
@@ -25,6 +25,10 @@ function ItemListCart(props) {
 
     }
 
+    function onTerminarCompra() {
+        terminarCompra()
+    }
+
     // Calcula el total
     total = parseFloat(calcularTotal(props.items)).toFixed(2) 
 
@@ -39,8 +43,10 @@ function ItemListCart(props) {
                 )   
             }
 
+            {/* Contenedor */}
             <div className="container container-sm container-md container-lg mt-5">
 
+                {/* Total */}
                 <div className="row text-muted align-items-center">                            
                     <div className="col-6">
                     </div>
@@ -48,12 +54,12 @@ function ItemListCart(props) {
                         Total
                     </div>
                     <div className="col fw-bold fs-4">
-                        {/* $ 1000.00 */}
                         $ {total}
                     </div>
                     <hr className="mt-4 solid"></hr>
                 </div>
 
+                {/* Inicio - Botones Vaciar Carrito y Terminar compra */}
                 <div className="row text-muted align-items-center mt-5">
 
                     <div className="col-8">      
@@ -73,7 +79,7 @@ function ItemListCart(props) {
                         
                             <Link to='/terminarCompra'>
                                 <button type="button" 
-                                        onClick={onAddComprarAhora} 
+                                        onClick={onTerminarCompra} 
                                         className="btn btn-dark w-100">
                                         
                                     Terminar compra
@@ -85,9 +91,11 @@ function ItemListCart(props) {
 
                     </div>
                     
-                </div>
+                </div> {/* Fin - Botones Vaciar Carrito y Terminar compra */}
 
-            </div>
+            </div> {/* Contenedor */}
+
+            <div className="separador"></div>
 
         </>
     )

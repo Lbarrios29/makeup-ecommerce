@@ -57,3 +57,22 @@ header{
     border-color: #f0f0e5;
 }
 
+/**$*$********************************************************************
+*$*$                         COUNTER CARRITO                             *
+*$*$**********************************************************************/
+.contador{
+    background-color: #2a77d6;
+    color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50px;
+    right: 140px;
+    font-size: 13px;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    overflow: hidden;
+    z-index: 100;
+}
+

@@ -1,28 +1,39 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useCartContext } from '../../../context/CartContext'
 
 function ItemCount(props) {
 
     console.log("ItemCount");
-    const { cartList, setCartList } = useCartContext()
+    console.log(props);
+
+	const { cartList, setCartList,itemsCounter, setItemsCounter } = useCartContext()
+	const [cant, setCant] = useState(props.initial);
+
+	// Se usa useEffect porque despues del primer seteo de props.initial
+	// a cant no ocurre todas las veces que se renderiza de nuevo.
+	// Ejemplo en el cart cuando se elimina un item nunca setea la cantidad correcta
+	// con useEffect se logra actualizar cant cada vez que cambia props.initial	
+	useEffect(() => { 
 	
-	console.log(props);
-	const [count, setCount] = useState(props.initial);
+		setCant(props.initial) 
+	
+	}, [props.initial] )
 
 	function sumar() {
 
 		console.log("Sumar");
 		
-        if (count < props.stock) {
+        if (cant < props.stock) {
 
-			setCount(count + 1);
+			setCant(cant + 1);
 			
             if (props.fromCart) {
-                setCartList( cartList.map((item) => item.item.id === props.id ? { ...item, cantidad: count + 1 } 
+                setCartList( cartList.map((item) => item.item.id === props.id ? { ...item, cantidad: cant + 1 } 
                                                                               : item )
                 );
+				setItemsCounter( itemsCounter + 1)
             } else {
-                props.onAdd(count + 1);
+                props.onAdd(cant + 1);
             }
 		}
 
@@ -30,16 +41,19 @@ function ItemCount(props) {
 
 	function restar() {
 
-		if (count > 1) {
+		console.log("Restar");
+
+		if (cant > 1) {
 		
-            setCount(count - 1);
-			
+            setCant(cant - 1);
+
             if (props.fromCart) {
                 setCartList(cartList.map((item) => item.item.id === props.id 
-                                                   ? { ...item, cantidad: count - 1 } 
+                                                   ? { ...item, cantidad: cant - 1 } 
                                                    : item));
+				setItemsCounter( itemsCounter - 1)									   
             } else {
-                props.onAdd(count - 1);
+                props.onAdd(cant - 1);
             }
 		}
 	}
@@ -54,7 +68,7 @@ function ItemCount(props) {
 				-
 			</div>
 			<div className="qtyInput border-0 text-center form-control shadow-none text-muted">
-				{count}
+				{cant}
 			</div>
 			<div
 				className="btnQty qtyPlus fs-3 pe-3 text-muted"
