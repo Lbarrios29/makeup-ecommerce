@@ -27,27 +27,33 @@ function GaleriaListContainer() {
 
 
     return (
-        <main>
-            <section>
 
-                <h1 className="text-center p-4 wow animate__animated animate__fadeInUp">
-                    Algunos Trabajos
-                </h1>
+        <>
+            <main>
+                <section>
 
-                <div className="container">
-                    <div className="mainGaleria">
+                    <h1 className="text-center p-4 wow animate__animated animate__fadeInUp">
+                        Algunos Trabajos
+                    </h1>
 
-                        {/* Pasa a ItemListGaleria el array con las propiedades de galeria */}
-                        { 
-                            loading ? <h2>Cargando...</h2> 
-                                    :<ItemListGaleria galeria={galeria}/>
-                        }
+                    <div className="container">
+                        <div className="mainGaleria">
 
-                    </div>   
-                </div>
+                            {/* Pasa a ItemListGaleria el array con las propiedades de galeria */}
+                            { 
+                                loading ? <h2>Cargando...</h2> 
+                                        :<ItemListGaleria galeria={galeria}/>
+                            }
 
-            </section>
-        </main>
+                        </div>   
+                    </div>
+
+                </section>
+            </main>
+
+            <div className="separador"></div> 
+        </>               
+
     )
 }
 

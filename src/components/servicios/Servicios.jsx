@@ -162,6 +162,7 @@ function Servicios() {
                 </div> 
 
             </main>
+            <div className="separador"></div>
         </>
     
     )

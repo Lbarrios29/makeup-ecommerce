@@ -1,10 +1,13 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { getProductos } from '../../../utils/getProductos'
 import { onAddShoppingCart } from '../../../utils/events'
 import ItemList from '../ItemList/ItemList'
 import Display404 from '../../404/Display404'
+import getProductFiltered from '../../../Firebase/firebase'
+// import getDBConnection from '../../../Firebase/firebase'
+// import { getFirestore } from '@firebase/firestore'
+// import { getDBConnection } from '../../../Firebase/firebase'
 
 function ItemListContainer() {
 
@@ -13,34 +16,28 @@ function ItemListContainer() {
 
     const { categoriaId } = useParams(); //toma el parametro de la url y lo guarda en una variable categoriaId.
 
-    useEffect(() => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    useEffect( async () => {
 
-        //api Fetch()
-        getProductos    
-        .then(data => {   
-            const items = data.filter(producto => producto.categoriaId === categoriaId)
-            setProductos(items) 
-            console.log(items)  
-        })
-        .catch(err => console.log(err))    
-        .finally(()=> setLoading(false))
-        
-        // return () => {
-        //     console.log('clean')
-        // }
-    },[categoriaId])
+        try {
+            const items = await getProductFiltered('productos','categoria','==',categoriaId)
+            setProductos(items)
+        }
+        catch (error) {
+            console.log(error)    
+        }
+        finally{
+            setLoading(false)
+        }
 
-    let prods=false
-    if (productos.length>0) {
-        prods=true
-    }
+    }, [categoriaId])
 
     return (
         <>       
             { 
                 loading ? <h2>Cargando...</h2> 
-                        : prods ? <ItemList productos={productos} onAddShoppingCart={onAddShoppingCart}/>
-                                : <Display404/>     
+                        : productos.length > 0 ? <ItemList productos={productos} onAddShoppingCart={onAddShoppingCart}/>
+                                               : <Display404/>     
             }
         </>    
 

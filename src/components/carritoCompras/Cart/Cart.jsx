@@ -10,7 +10,6 @@ function Cart(props) {
     function onDelete(id) {
 
         console.log("onDelete")
-        console.log(id)
         eliminarItem( id )
         setIdDelete(id)
         
@@ -30,7 +29,7 @@ function Cart(props) {
                             
                 {/* <!-- Imagen --> */}
                 <div className="col-2 col-lg-1 col-md-1">
-                    <img src={props.item.item.srcImagen} className="img-fluid" alt={props.item.item.alt}/>
+                    <img src={props.item.item.imagen} className="img-fluid" alt={props.item.item.alt}/>
                     {/* <img src={Img} className="img-fluid"/> */}
                 </div>
                         

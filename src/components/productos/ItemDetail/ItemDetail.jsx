@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom'
 function ItemDetail(props) {
 
     console.log("ItemDetail")
+    console.log(props)
     const { agregarProducto } = useCartContext()
     const [count, setCount] = useState(1)    
     const [button, setButton] = useState('AgregarCarrito')
@@ -75,7 +76,7 @@ function ItemDetail(props) {
             
             {/* Imagen Producto */}
             <div className="col">
-                <img src={props.item.srcImagen} alt={props.item.alt} className="img-fluid"/>        
+                <img src={props.item.imagen} alt={props.item.alt} className="img-fluid"/>        
             </div>
             
             <div className="col ms-5 ps-4">
