@@ -3,6 +3,9 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getProductById } from '../../../Firebase/firebase';
+// import productoService from '../../../data/productoService';
+// import { db } from '../../../Firebase/firebase';
+
 // import getProductFiltered from '../../../Firebase/firebase';
 // import { getProductos } from '../../../utils/getProductos'
 import ItemDetail from '../ItemDetail/ItemDetail';
@@ -17,12 +20,11 @@ function ItemDetailContainer() {
     useEffect(async () => {
 
         try {
-            // Parametros: (collection,field,operator,condition)
-            // const item = await getProductFiltered('productos','__name__','==',id)
-            // setItemSeleccionado(item[0])
 
             const item = await getProductById('productos',id)
+            // const item = await productoService.getProductById('productos',id,db)
             setItemSeleccionado(item)
+        
         }
         catch (error) {
             console.log(error)    
@@ -35,15 +37,20 @@ function ItemDetailContainer() {
 
     return (
 
-        <div className="container-sm container-md container-lg">
+        <>
+            <div class="separador"></div>
+        
+            <div className="container container-sm container-md container-lg">
 
-            {
-                loading ? <h2>Cargando...</h2> 
-                        : <ItemDetail item={itemSeleccionado}/>
-            }
+                {
+                    loading ? <h2>Cargando...</h2> 
+                            : <ItemDetail item={itemSeleccionado}/>
+                }
 
-        </div>
+            </div>
 
+            <div class="separador"></div>
+        </>
     )
 }
 

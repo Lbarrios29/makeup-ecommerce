@@ -25,16 +25,28 @@ function ItemListCart(props) {
 
     }
 
-    function onTerminarCompra() {
+    function onTerminarCompra(e) {
+
+        e.preventDefault()
+        // const orden = { }
+        // ondragend.date = 
+        // orden.buyer = { nombre: "luis", telefono: "1162548796", email: "luis@gmail.com" }
+        // orden.total = calcularTotal(props.items)
+        // orden.items = props.items.map(cartItem=>{
+        //     return {id: cartItem.id, nombre: cartItem.nombre, precio:cartItem.precio}
+        // })
+        // console.log(orden)
         terminarCompra()
+    
     }
 
     // Calcula el total
     total = parseFloat(calcularTotal(props.items)).toFixed(2) 
 
     return (
+        
         <>
-
+            <div className='separador'></div>
             {    
                 // Llama a Itemproducto para renderizar cada imagen y le pasa parametros   
                 props.items.map(item => <Cart key={item.id}
@@ -44,11 +56,11 @@ function ItemListCart(props) {
             }
 
             {/* Contenedor */}
-            <div className="container container-sm container-md container-lg mt-5">
+            <div className="container container-sm container-md container-lg mt-2">
 
                 {/* Total */}
                 <div className="row text-muted align-items-center">                            
-                    <div className="col-6">
+                    <div className="col col-lg-6 ">
                     </div>
                     <div className="col fw-bold fs-4">
                         Total
@@ -60,38 +72,26 @@ function ItemListCart(props) {
                 </div>
 
                 {/* Inicio - Botones Vaciar Carrito y Terminar compra */}
-                <div className="row text-muted align-items-center mt-5">
-
-                    <div className="col-8">      
-                    </div>
-                    
-                    <div className="col">
-
-                        <div className="d-flex justify-content-around"> 
-
-                            <button type="button p-5 w-100" 
-                                    onClick={onClearCart} 
-                                    className="btn btn-dark">
-                                
-                                Vaciar carrito
+                <div className="d-flex gap-2 justify-content-end pt-2">
                             
-                            </button>
+                    <button type="button" 
+                            onClick={onClearCart} 
+                            className="btn btn-dark">
+                        Vaciar carrito
+                    </button>
                         
-                            <Link to='/terminarCompra'>
-                                <button type="button" 
-                                        onClick={onTerminarCompra} 
-                                        className="btn btn-dark w-100">
-                                        
-                                    Terminar compra
+                    <Link to='/terminarCompra'>
+                        <button type="button" 
+                                onClick={onTerminarCompra} 
+                                // onSubmit={onTerminarCompra}
+                                className="btn btn-dark">
+                            Terminar compra
                                     
-                                </button>
-                            </Link>
+                        </button>
+                    </Link>
 
-                        </div>
-
-                    </div>
-                    
-                </div> {/* Fin - Botones Vaciar Carrito y Terminar compra */}
+                </div>
+                {/* Fin - Botones Vaciar Carrito y Terminar compra */}
 
             </div> {/* Contenedor */}
 

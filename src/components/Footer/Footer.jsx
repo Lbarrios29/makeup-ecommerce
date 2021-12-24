@@ -20,7 +20,7 @@ function Footer() {
                             <div className="mb-2 mb-lg-3">
                                 <a href="https://www.google.com/maps/place/Caballito,+CABA/@-34.616655,-58.4622398,14z/data=!3m1!4b1!4m5!3m4!1s0x95bcca3911f8ab2d:0x27b394c2f3d87d2d!8m2!3d-34.6159245!4d-58.4406027"
                                     className=" text-decoration-none textoFooter" target="_blank" rel="noopener noreferrer">
-                                    <BsHouse/>
+                                    <BsHouse className="me-1"/>
                                     Caballito, Caba, Argentina
                                 </a>
                             </div>
@@ -28,7 +28,7 @@ function Footer() {
                                 <a href="mailto:info@gmail.com" className="text-decoration-none textoFooter" target="_blank"
                                     rel="noopener noreferrer">
                                     {/* <i className="bi bi-envelope"></i> */}
-                                    <BsEnvelope/>
+                                    <BsEnvelope className="me-1"/>
                                     info@gmail.com
                                 </a>
                             </div>
@@ -36,7 +36,7 @@ function Footer() {
                                 <a href="https://api.whatsapp.com/send?phone=5411618107&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Makeup."
                                     className="text-decoration-none textoFooter" target="_blank" rel="noopener noreferrer">
                                     {/* <i className="bi bi-telephone"></i> */}
-                                    <BsTelephone/>
+                                    <BsTelephone className="me-1"/>
                                     +541116235478
                                 </a>
                             </div>
@@ -48,43 +48,46 @@ function Footer() {
                                 Secciones
                             </p>
 
-                            <Link to='/home' className="text-decoration-none">
-                                <div className="mb-2 mb-lg-3 ">
-                                    <a href="index.html" className=" text-decoration-none textoFooter">
+                            
+                            <div className="mb-2 mb-lg-3 ">
+                                <Link to='/home' className="text-decoration-none textoFooter">
+                                    {/* <a href="index.html" className=" text-decoration-none textoFooter"> */}
                                         Home
-                                    </a>
-                                </div>
-                            </Link>
+                                    {/* </a> */}
+                                </Link>    
+                            </div>
 
-                            <Link to='/nosotros' className="text-decoration-none">
-                                <div className="mb-2 mb-lg-3 ">
-                                    <a href="html/nosotros.html" className=" text-decoration-none textoFooter">
+                            
+                            <div className="mb-2 mb-lg-3 ">
+                                <Link to='/nosotros' className="text-decoration-none textoFooter">
+                                    {/* <a href="html/nosotros.html" className=" text-decoration-none textoFooter"> */}
                                         Nosotros
-                                    </a>
-                                </div>
-                            </Link>
+                                    {/* </a> */}
+                                </Link>    
+                            </div>
 
-                            <Link to='/servicios' className="text-decoration-none">
-                                <div className="mb-2 mb-lg-3 ">
-                                    <a href="html/servicios.html" className=" text-decoration-none textoFooter">
+                            
+                            <div className="mb-2 mb-lg-3 ">
+                                <Link to='/servicios' className="text-decoration-none textoFooter">
+                                    {/* <a href="html/servicios.html" className=" text-decoration-none textoFooter"> */}
                                         Servicios
-                                    </a>
-                                </div>
-                            </Link>
+                                    {/* </a> */}
+                                </Link>    
+                            </div>
 
-                            <Link to='/galeria' className="text-decoration-none">
-                                <div className="mb-2 mb-lg-3 ">
-                                    <a href="html/galeria.html" className=" text-decoration-none textoFooter">
+                            <div className="mb-2 mb-lg-3 ">
+                                <Link to='/galeria' className="text-decoration-none textoFooter">
+                                    {/* <a href="html/galeria.html" className=" text-decoration-none textoFooter"> */}
                                         Galería
-                                    </a>
-                                </div>
-                            </Link>
+                                    {/* </a> */}
+                                </Link>    
+                            </div>
 
                             <div className="mb-4 ">
-                                <Link to='/contacto' className="text-decoration-none">
-                                    <a href="html/contacto.html" className=" text-decoration-none textoFooter">
+                                <Link to='/contacto' className="text-decoration-none textoFooter">
+                                    {/* <a href="html/contacto.html" className=" text-decoration-none textoFooter"> */}
                                         Contacto
-                                    </a>
+                                    {/* </a> */}
                                 </Link>
                             </div>
                         </div>
@@ -99,7 +102,7 @@ function Footer() {
                                     className="me-1  text-decoration-none textoFooter" target="_blank"
                                     rel="noopener noreferrer">
                                     {/* <i className="bi bi-facebook"></i> */}
-                                    <BsFacebook/>
+                                    <BsFacebook className="me-1"/>
                                     Facebook
                                 </a>
                             </div>
@@ -108,7 +111,7 @@ function Footer() {
                                 <a href="https://twitter.com/?lang=es" className="me-1  text-decoration-none textoFooter"
                                     target="_blank" rel="noopener noreferrer">
                                     {/* <i className="bi bi-twitter"></i> */}
-                                    <BsTwitter/>
+                                    <BsTwitter className="me-1"/>
                                     Twitter
                                 </a>
                             </div>
@@ -118,7 +121,7 @@ function Footer() {
                                     className="me-1  text-decoration-none textoFooter" target="_blank"
                                     rel="noopener noreferrer">
                                     {/* <i className="bi bi-instagram"></i> */}
-                                    <BsInstagram/>
+                                    <BsInstagram className="me-1"/>
                                     Instagram
                                 </a>
                             </div>
@@ -127,7 +130,7 @@ function Footer() {
                                 <a href="https://ar.linkedin.com/" className="me-1  text-decoration-none textoFooter"
                                     target="_blank" rel="noopener noreferrer">
                                     {/* <i className="bi bi-linkedin"></i> */}
-                                    <BsLinkedin/>
+                                    <BsLinkedin className="me-1"/>
                                     Linkedin
                                 </a>
                             </div>

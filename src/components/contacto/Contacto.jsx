@@ -1,96 +1,91 @@
-import React from 'react'
+import { Form,Container, Row, Col } from 'react-bootstrap'
+import Button from 'react-bootstrap/Button'
 import './contacto.css'
 
 function Contacto() {
+
     return (
         <>
+            <div class="separador"></div>
             <main>
                 <section>
-                    <div className="container containerFormulario mt-5">
+                    <Container className="containerFormulario mt-5">
                         <div className="boxFormulario">
 
                             <h1 className="p-3 ps-2 text-start h3 wow animate__animated animate__fadeIn" data-wow-delay="1s">
-                                Contactate con Nosotros
+                                    Contactate con Nosotros
                             </h1>
-                        
-                            <form action="" className="ms-2 pb-4 fw-bold">
+
+                            <Form className="ms-2 pb-4 fw-bold">
 
                                 {/* <!-- Nombre y Email --> */}
-                                <div className="row d-flex flex-column flex-md-row flex-lg-row wow animate__animated
-                                                animate__fadeIn" data-wow-delay="0.3s">
+                                <Row className="wow animate__animated animate__fadeIn" data-wow-delay="0.3s">
+                                    <Col lg={6} md={6} sm={12} className="pb-3">
+                                        <Form.Group controlId="contactForm.ControlInput1">
+                                            <Form.Label>
+                                                Nombre Completo
+                                            </Form.Label>
+                                            <Form.Control type="text" placeholder="Nombre Completo" required />
+                                        </Form.Group>
+                                    </Col>
 
-                                    <div className="col mb-3">
-                                        <label for="nombre" className="form-label">
-                                            Nombre Completo
-                                        </label>
-                                        <input type="text" name="nombre" id="nombre" className="form-control"
-                                            placeholder="Nombre Completo" required/>
-                                    </div>
-
-                                    <div className="col mb-3">
-                                        <label for="email" className="form-label">
-                                            Direccion de email
-                                        </label>
-                                        <input type="email" name="email" id="email" className="form-control" placeholder="Email"
-                                            required/>
-                                    </div>
-
-                                </div>
+                                    <Col lg={6} md={6} sm={12} className="pb-3">
+                                        <Form.Group controlId="contactForm.ControlInput2">
+                                            <Form.Label>
+                                                Dirección de email
+                                            </Form.Label>
+                                            <Form.Control type="email" placeholder="Email" required/>
+                                        </Form.Group>
+                                    </Col>
+                                </Row>
 
                                 {/* <!-- Asunto - Lista desplegable --> */}
-                                <div className="mb-3 wow animate__animated animate__fadeIn" data-wow-delay="0.3s">
-                                    <label for="DataList" className="form-label">
-                                        Asunto
-                                    </label>
-                                    <input className="form-control" list="datalistOptions" id="DataList"
-                                        placeholder="Escriba o elija una opción"/>
-                                    <datalist id="datalistOptions">
-                                        <option value="Maquillaje"/>
-                                        <option value="Pedicuria"/>
-                                        <option value="Peinado"/>
-                                        <option value="Pestañas"/>
-                                        <option value="Uñas"/>
-                                    </datalist>
-                                </div>
+                                <Form.Group className="mb-3 wow animate__animated animate__fadeIn" data-wow-delay="0.3s" controlId="contactForm.ControlInput3">
+                                    <Form.Label>Asunto</Form.Label>
+                                    <Form.Select>
+                                        <option>Escriba o elija una opción</option>
+                                        <option value="1">Maquillaje</option>
+                                        <option value="2">Pedicuria</option>
+                                        <option value="3">Peinado</option>
+                                        <option value="4">Pestañas</option>
+                                        <option value="5">Uñas</option>
+                                    </Form.Select>
+                                </Form.Group>
 
                                 {/* <!-- Mensaje --> */}
-                                <div className="mb-3 wow animate__animated animate__fadeIn" data-wow-delay="0.4s">
-                                    <label for="FormControlTextarea1" className="form-label">
+                                <Form.Group className="mb-3 wow animate__animated animate__fadeIn" data-wow-delay="0.4s" controlId="exampleForm.ControlTextarea1">
+                                    <Form.Label>
                                         Mensaje
-                                    </label>
-                                    <textarea className="form-control" id="FormControlTextarea1" rows="3"
-                                        placeholder="Mensaje">
-                                    </textarea>
-                                </div>
+                                    </Form.Label>
+                                    <Form.Control as="textarea"  placeholder="Mensaje" rows={3} />
+                                </Form.Group>
 
                                 {/* <!-- Newsletter --> */}
-                                <div className="form-check mb-3 wow animate__animated animate__fadeIn" data-wow-delay="0.5s">
-                                    <input className="form-check-input" type="checkbox" id="flexCheckChecked"/>
-                                    <label className="form-check-label" for="flexCheckChecked">
-                                        ¿Desea recibir Newsletter?
-                                    </label>
-                                </div>
+                                <Form.Check type="checkbox" id="contactCheckbox" className="mb-3 wow animate__animated animate__fadeIn" data-wow-delay="0.5s" label="¿Desea recibir Newsletter?"/>
 
                                 {/* <!-- Botones --> */}
-                                <div className="d-grid gap-2 d-md-block wow animate__animated animate__fadeIn"
-                                    data-wow-delay="0.6s">
-                                    <button type="submit" className="btn btn-dark fw-bold">
-                                        Enviar
-                                    </button>
+                                <Row className="gap-2 wow animate__animated animate__fadeIn" data-wow-delay="0.6s" >
+                                    <Col sm={12} md={2} lg={3}>
+                                        <Button type="submit" variant="dark" className="w-100">
+                                            Enviar
+                                        </Button>
+                                    </Col>
+                                    <Col sm={12} md={2} lg={3}>
+                                        <Button type="reset" variant="dark" className="w-100">
+                                            Reset
+                                        </Button>
+                                    </Col>
+                                </Row>
 
-                                    <button type="reset" className="btn btn-dark fw-bold ms-2">
-                                        Reset
-                                    </button>
-                                </div>
-
-                            </form>
+                            </Form>
 
                         </div>
-                    </div>
-                </section>    
-            </main>
+                    </Container>
+                </section>
+            </main>    
 
             <div className="separador"></div>
+        
         </>
     )
 }

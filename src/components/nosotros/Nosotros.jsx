@@ -8,6 +8,7 @@ function Nosotros() {
     return (
 
         <>
+            <div class="separador"></div>
             {/* // <!--Jerarquia de empleados desde el fundador a empleados--> */}
             <main>
                 <section>

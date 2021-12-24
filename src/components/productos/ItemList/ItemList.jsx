@@ -6,6 +6,7 @@ function ItemList(props) {
     return (
 
         <>
+            <div class="separador"></div>
             <main>
                 <section>
 

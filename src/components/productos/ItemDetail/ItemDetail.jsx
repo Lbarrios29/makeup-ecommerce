@@ -31,7 +31,7 @@ function ItemDetail(props) {
 
         return (
 
-            <div className="w-75">
+            <div>
                 <button id={props.item.id} 
                         type="button" 
                         onClick={()=>onAddCart(count)}
@@ -55,7 +55,7 @@ function ItemDetail(props) {
         return (
 
             <Link to='/cart'>
-                <div className="w-75">
+                <div>
                     <button id={props.item.id} 
                             type="button"  
                             className="btn btn-primary w-100 mt-3">
@@ -72,34 +72,34 @@ function ItemDetail(props) {
 
     return (
 
-        <div className="row m-5">
+        <div className="row">
             
             {/* Imagen Producto */}
             <div className="col">
                 <img src={props.item.imagen} alt={props.item.alt} className="img-fluid"/>        
             </div>
             
-            <div className="col ms-5 ps-4">
+            <div className="col">
 
                 {/* Nombre Producto */}
-                <div className="fw-bold fs-2 productoMakeup">
+                <div className="fw-bold mb-2 productoMakeup productoMakeup--title">
                     {props.item.nombre}
                 </div>
                 
                 {/* Precio */}
-                <div className="fs-3 text-muted mt-4">
+                <div className="text-muted mb-2 productoMakeup--fontSize">
                     {'$ ' + parseFloat(props.item.precio).toFixed(2)}
                 </div>
 
                 {/* Contador */}
-                <div className="w-75 mt-3">
+                <div className="mb-2 productoMakeup--widthCount">
                     {/* <ItemCount stock={props.item.stock} onAdd={()=>onAdd(count)}/> */}
                     <ItemCount id={props.item.id} stock={props.item.stock} onAdd={onAdd} initial={1}/>
                 </div>
 
                 {/* Stock */}
                 <div className="mt-3">
-                    <div className="fw-bold fs-5 productoMakeup">
+                    <div className="fw-bold productoMakeup productoMakeup--fontSize--stock">
                         Stock Disponible
                     </div>
 
@@ -109,7 +109,7 @@ function ItemDetail(props) {
                 </div>
                 
                 {/* Agrega un paso intermedio(boton Ir al carrito) antes de ir al carrito */}
-                <div className="mt-4">
+                <div className='productoMakeup--widthButton'>
                 
                     {
                         button === 'AgregarCarrito' ? <AgregarCarrito/>

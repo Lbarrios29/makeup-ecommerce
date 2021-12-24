@@ -24,36 +24,41 @@ function Cart(props) {
 
     return (
         
-        <div className="container container-sm container-md container-lg mt-5">
+        <div className="container container-sm container-md container-lg">
             <div className="row text-muted align-items-center">
                             
                 {/* <!-- Imagen --> */}
-                <div className="col-2 col-lg-1 col-md-1">
+                <div className="col-2 col-lg-2 col-md-2">
                     <img src={props.item.item.imagen} className="img-fluid" alt={props.item.item.alt}/>
-                    {/* <img src={Img} className="img-fluid"/> */}
                 </div>
                         
-                {/* <!-- Producto --> */}
-                <div className="col-4 fw-bold">
-                    {props.item.item.nombre} 
-                </div>  
-            
-                {/* <!-- Cantidad --> */}
-                <div className="col">
-                    <ItemCount id={props.item.item.id}
-                               stock={props.item.item.stock} 
-                               initial={props.cantidad} 
-                               fromCart={true}/> 
-                    <span className="fs-6">
-                        {props.item.item.stock} disponibles
-                    </span>       
+                <div className="col-5 col-lg-6 col-md-6">        
+                    <div className='d-flex flex-column justify-content-center align-items-center'>
+                      
+                        {/* <!-- Producto --> */}
+                        <div className="fw-bold nombreProductoCart">    
+                            {props.item.item.nombre} 
+                        </div>  
+                    
+                        {/* <!-- Cantidad --> */}
+                        <div className='cartCountwidth'>
+                            <ItemCount id={props.item.item.id}
+                                    stock={props.item.item.stock} 
+                                    initial={props.cantidad} 
+                                    fromCart={true}/> 
+                            <span className="fs-6 stockPadding">
+                                {props.item.item.stock} disponibles
+                            </span>       
+                        </div>
+                    
+                    </div>
                 </div>
 
                 {/* <!-- Precio --> */}
-                <div className="col h6 fs-5">
+                <div className="col-3 h6">    
                     $ {parseFloat(props.item.item.precio).toFixed(2)}
                 </div>
-
+                
                 {/* <!-- Eliminar --> */}
                 <div className="col">
                     <button  className="btn-black border-0" onClick={()=>onDelete(props.item.item.id)}>

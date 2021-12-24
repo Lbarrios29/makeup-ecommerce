@@ -7,7 +7,6 @@ function Display404() {
     return (
 
         <>
-            {/* <NavBar/> */}
             <div className="parallaxStars">
                 {/* <!-- Estrellas parallax --> */}
                 <div id='stars'></div>

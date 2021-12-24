@@ -19,10 +19,10 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-async function getProductFiltered(tabla,field, operator,condition) {
+// Obtiene la conexion a bd
+export const db = getFirestore(app);
 
-    // Obtiene la conexion a bd
-    const db = getFirestore(app);
+async function getProductFiltered(tabla,field, operator,condition) {
 
     // Obtiene la coleccion a tratar
     // const productosCol = collection(db, 'productos');
@@ -45,9 +45,6 @@ async function getProductFiltered(tabla,field, operator,condition) {
 
 export async function getProductById(tabla,id) {
     
-    // Obtiene la conexion a bd
-    const db = getFirestore(app);
-
     const productoSnap = await getDoc( doc( db, `${tabla}`, `${id}`) )
 
     return { id:productoSnap.id, ...productoSnap.data() }

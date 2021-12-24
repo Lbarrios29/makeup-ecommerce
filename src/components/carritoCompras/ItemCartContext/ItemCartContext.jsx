@@ -8,17 +8,12 @@ function ItemCartContext() {
     console.log("ItemCartContext")
     
     const {cartList} = useCartContext()
-    let hayItems = false
-
-    if (cartList.length > 0) {
-        hayItems = true
-    }
 
     return (
         <>
             {
-                hayItems ? <ItemListCart items={cartList}/>
-                         : <CarritoVacio/>
+                cartList.length > 0 ? <ItemListCart items={cartList}/>
+                                    : <CarritoVacio/>
             }
         </>
     )

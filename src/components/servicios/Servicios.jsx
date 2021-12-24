@@ -4,6 +4,8 @@ import Cejas from "../../images/servicios/cejas.png"
 import Pestana from '../../images/servicios/pestana.png'
 import Unas from "../../images/servicios/unas.png"
 import './servicios.css'
+import { Container } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 function Servicios() {
     
@@ -18,9 +20,9 @@ function Servicios() {
                     Nuestros Servicios
                 </h1>
                 
-                <div className="separador"></div>
+                {/* <div className="separador"></div> */}
 
-                <div className="container">
+                <Container fluid="sm" className='py-3'>
 
                     {/* <!-- Servicio Makeup --> */}
                     <div className="flexServicios">
@@ -42,29 +44,36 @@ function Servicios() {
                                 tendencia
                                 instagram, técnicas actuales en tendencia ( maquillajes variables ).
                                 <div className='mt-2'>
-                                    <a id="idServicioMakeup" href="servicioMakeup.html" className="p-2 rounded linkServicios text-decoration-none wow animate__animated
-                                        animate__fadeInUp" data-wow-delay="0.2">
-                                        Ver mas...
-                                    </a>
+                                    <Link to="/display404" className="text-decoration-none p-2 rounded linkServicios text-decoration-none wow animate__animated
+                                            animate__fadeInUp" data-wow-delay="0.2">
+                                        {/* <a id="idServicioMakeup" href="servicioMakeup.html" className="p-2 rounded linkServicios text-decoration-none wow animate__animated
+                                            animate__fadeInUp" data-wow-delay="0.2"> */}
+                                            Ver mas...
+                                        {/* </a> */}
+                                    </Link>
                                 </div>
                             </p>
                         </div>
 
                         <div className="boxServicios">
-                            <a href="servicioMakeup.html">
-                                <img src={Makeup} alt="Maquillaje" loading="lazy"
-                                    className="img-fluid rounded wow animate__animated animate__zoomIn"/>
-                            </a>
+                            <Link to="/display404" className='text-decoration-none'>
+                                <a href="servicioMakeup.html">
+                                    <img src={Makeup} alt="Maquillaje" loading="lazy"
+                                        className="img-fluid rounded wow animate__animated animate__zoomIn"/>
+                                </a>
+                            </Link>
                         </div>
                     </div>
 
                     {/* <!-- Servicio Cejas --> */}
                     <div className="flexCejas">
                         <div className="boxServicios">
-                            <a href="servicioMakeup.html">
-                                <img src={Cejas} alt="Tratamiento de Cejas" loading="lazy"
-                                    className="img-fluid rounded wow animate__animated animate__zoomIn"/>
-                            </a>
+                            <Link to="/display404" className='text-decoration-none'>
+                                {/* <a href="servicioMakeup.html"> */}
+                                    <img src={Cejas} alt="Tratamiento de Cejas" loading="lazy"
+                                        className="img-fluid rounded wow animate__animated animate__zoomIn"/>
+                                {/* </a> */}
+                            </Link>
                         </div>
 
                         <div className="boxServicios">
@@ -85,10 +94,13 @@ function Servicios() {
                                 sobre la
                                 zona para calmar la rojez e inflamación en algunos casos.
                                 <div className='mt-2'>
-                                    <a href="servicioMakeup.html" className="p-2 rounded linkServicios text-decoration-none wow animate__animated
+                                    <Link to="/display404" className="p-2 rounded linkServicios text-decoration-none wow animate__animated
                                         animate__fadeInUp" data-wow-delay="0.2s">
+                                    {/* <a href="servicioMakeup.html" className="p-2 rounded linkServicios text-decoration-none wow animate__animated
+                                        animate__fadeInUp" data-wow-delay="0.2s"> */}
                                         Ver mas...
-                                    </a>
+                                    {/* </a> */}
+                                    </Link>
                                 </div>
                             </p>
                         </div>
@@ -113,29 +125,36 @@ function Servicios() {
                                 al
                                 agua y al calor. No es un tratamiento invasivo.
                                 <div className='mt-2'>
-                                    <a href="servicioMakeup.html" className="p-2 rounded linkServicios text-decoration-none wow animate__animated
-                                        animate__fadeInUp" data-wow-delay="0.2s">
-                                        Ver mas...
-                                    </a>
+                                    <Link to="/display404" className="text-decoration-none p-2 rounded linkServicios text-decoration-none wow animate__animated
+                                            animate__fadeInUp" data-wow-delay="0.2s">
+                                        {/* <a href="servicioMakeup.html" className="p-2 rounded linkServicios text-decoration-none wow animate__animated
+                                            animate__fadeInUp" data-wow-delay="0.2s"> */}
+                                            Ver mas...
+                                        {/* </a> */}
+                                    </Link>
                                 </div>
                             </p>
                         </div>
 
                         <div className="boxServicios">
-                            <a href="servicioMakeup.html">
-                                <img src={Pestana} alt="Tratamiento de Pestañas" loading="lazy"
-                                    className="img-fluid rounded wow animate__animated animate__zoomIn"/>
-                            </a>
+                            <Link to="/display404" className='text-decoration-none'>
+                                {/* <a href="servicioMakeup.html"> */}
+                                    <img src={Pestana} alt="Tratamiento de Pestañas" loading="lazy"
+                                        className="img-fluid rounded wow animate__animated animate__zoomIn"/>
+                                {/* </a> */}
+                            </Link>
                         </div>
                     </div>
 
                     {/* <!-- Servicio Uñas --> */}
                     <div className="flexUnas">
                         <div className="boxServicios">
-                            <a href="servicioMakeup.html">
-                                <img src={Unas} alt="Tratamiento de Uñas" loading="lazy"
-                                    className="img-fluid rounded wow animate__animated animate__zoomIn"/>
-                            </a>
+                            <Link to="/display404" className='text-decoration-none'>
+                                {/* <a href="servicioMakeup.html"> */}
+                                    <img src={Unas} alt="Tratamiento de Uñas" loading="lazy"
+                                        className="img-fluid rounded wow animate__animated animate__zoomIn"/>
+                                {/* </a> */}
+                            </Link>
                         </div>
 
                         <div className="boxServicios">
@@ -150,19 +169,22 @@ function Servicios() {
                                 siguiendo
                                 la estructura de la uña además de semipermanente y mucho más.
                                 <div className='mt-2'>
-                                    <a href="servicioMakeup.html" className="p-2 rounded linkServicios text-decoration-none wow animate__animated
+                                    <Link to="/display404" className="text-decoration-none p-2 rounded linkServicios text-decoration-none wow animate__animated
                                         animate__fadeInUp" data-wow-delay="0.2s">
+                                    {/* <a href="servicioMakeup.html" className="p-2 rounded linkServicios text-decoration-none wow animate__animated
+                                        animate__fadeInUp" data-wow-delay="0.2s"> */}
                                         Ver mas...
-                                    </a>
+                                    {/* </a> */}
+                                    </Link>
                                 </div>
                             </p>
                         </div>
                     </div>
 
-                </div> 
+                </Container>
 
             </main>
-            <div className="separador"></div>
+            {/* <div className="separador"></div> */}
         </>
     
     )

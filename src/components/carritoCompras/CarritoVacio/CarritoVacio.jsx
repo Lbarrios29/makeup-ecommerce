@@ -1,13 +1,18 @@
 import React from 'react'
+import { Container } from 'react-bootstrap'
 
 function CarritoVacio() {
     return (
 
-        <div className="container m-5 p-5">
-            <div className="h1 text-center">
-                Tu carrito está vacío
-            </div>
-        </div>
+        <>
+            <div className='separador'></div>
+            <Container fluid className='p-1'>    
+                <div className="h1 text-center">
+                    Tu carrito está vacío
+                </div>
+            </Container>
+            <div className='separador'></div>
+        </>
 
     )
 }

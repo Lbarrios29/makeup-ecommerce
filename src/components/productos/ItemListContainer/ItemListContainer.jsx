@@ -5,9 +5,7 @@ import { onAddShoppingCart } from '../../../utils/events'
 import ItemList from '../ItemList/ItemList'
 import Display404 from '../../404/Display404'
 import getProductFiltered from '../../../Firebase/firebase'
-// import getDBConnection from '../../../Firebase/firebase'
-// import { getFirestore } from '@firebase/firestore'
-// import { getDBConnection } from '../../../Firebase/firebase'
+import createDocsGalery from '../../../Firebase/firebase'
 
 function ItemListContainer() {
 
@@ -22,6 +20,9 @@ function ItemListContainer() {
         try {
             const items = await getProductFiltered('productos','categoria','==',categoriaId)
             setProductos(items)
+            const data = createDocsGalery()
+            console.log("Data")
+            console.log(data)
         }
         catch (error) {
             console.log(error)    
@@ -31,6 +32,23 @@ function ItemListContainer() {
         }
 
     }, [categoriaId])
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // useEffect( async () => {
+
+    //     try {
+
+    //         const data = createDocsGalery()
+    //         console.log(data)    
+    //     }
+    //     catch (error) {
+    //         console.log(error)    
+    //     }
+    //     finally{
+    //         setLoading(false)
+    //     }
+
+    // }, [categoriaId])
 
     return (
         <>       

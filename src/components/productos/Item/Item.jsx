@@ -14,7 +14,6 @@ function Item(props) {
                 <Link to={`/detalle/${props.producto.id}`}>
                     <img src={props.producto.imagen} 
                         className="card-img-top img-fluid" 
-                        loading="lazy" 
                         alt={props.producto.descripcion}/>                                                
                 </Link>
                 
