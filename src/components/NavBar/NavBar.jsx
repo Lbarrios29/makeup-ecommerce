@@ -1,144 +1,90 @@
 import React from 'react';
 import CartWidget from './CartWidget';
-import '../NavBar/navBar.css';
-import Logo from "./images/logodiaz.png";
 import {Link} from 'react-router-dom'
-import { Container } from 'react-bootstrap';
+import { Container, Nav, Navbar, NavDropdown} from 'react-bootstrap';
+import Logo from "./images/logodiaz.png";
+import '../NavBar/navBar.css';
 
 function NavBar() {
     return (
-                
-        <header>
-            <nav className="navbar navbar-expand-sm bg-dark">
-                <Container>    
+         <>       
+            <Navbar bg="dark" expand="lg">
+                <Container fluid="sm">
 
-                    {/* <!-- Logo --> */}
-                    <Link to='/' className="navbar-brand ms-3">
-                        {/* <a className="navbar-brand ms-3" href="index.html"> */}
+                    <Navbar.Brand>
+                        <Link to='/' className="navbar-brand ms-3">
+                                    <img src={Logo} 
+                                        alt="logo"
+                                        className="logo__img--center wow animate__animated animate__flipInX"/>
+                        </Link>
+                    </Navbar.Brand>
                     
-                            <img src={Logo} 
-                                 alt="logo"
-                                 className="logo__img--center wow animate__animated animate__flipInX"/>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     
-                        {/* </a> */}
-                    </Link>
-
-                    {/* <!-- Boton Hamburguesa --> */}
-                    <button className="navbar-toggler custom-toggler me-4 wow animate__animated animate__bounceInDown"
-                            type="button" 
-                            data-bs-toggle="collapse" 
-                            data-bs-target="#navbarNav" 
-                            aria-controls="navbarNav"
-                            aria-expanded="false" 
-                            aria-label="Toggle navigation">
-                        
-                        <span className="navbar-toggler-icon"></span>
-                    
-                    </button>
-
-                    {/* <!-- Menu listado de opciones --> */}
-                    <div className="collapse navbar-collapse pe-5" 
-                         id="navbarNav">
-                        
-                        <ul id="menuHeader" 
-                            className="navbar-nav ms-auto">
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="me-auto">
                             
-                            {/* <Link to='/' className="text-decoration-none"> */}
-                                <li className="nav-item">
-                                    <Link to='/' className="text-decoration-none nav-link fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown" data-wow-delay="0.2s">
-                                    {/* <a className="nav-link fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown"
-                                        href="index.html" 
-                                        data-wow-delay="0.2s"> */}
-                                        Home
-                                    {/* </a> */}
-                                    </Link>
-                                </li>
-                            {/* </Link> */}
+                            <Nav.Link>
+                                <Link to='/' className="text-decoration-none fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown" data-wow-delay="0.2s">
+                                    Home
+                                </Link>
+                            </Nav.Link>
                             
-                            {/* <Link to='/nosotros' className="text-decoration-none"> */}
-                                <li className="nav-item">
-                                    <Link to='/nosotros' className="nav-link  text-decoration-none fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown"
-                                       href="html/nosotros.html" 
-                                       data-wow-delay="0.3s">
-                                        Nosotros
-                                    </Link>
-                                </li>
-                            {/* </Link> */}
-
-                            {/* <Link to='/servicios' className="text-decoration-none"> */}
-                                <li className="nav-item">
-                                    <Link to='/servicios' className="nav-link  text-decoration-none fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown"
-                                       href="html/servicios.html" 
-                                       data-wow-delay="0.4s">
-                                        Servicios
-                                    </Link>
-                                </li>
-                            {/* </Link> */}
+                            <Nav.Link>
+                                <Link to='/nosotros' className="text-decoration-none fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown"
+                                    data-wow-delay="0.3s">
+                                    Nosotros
+                                </Link>
+                            </Nav.Link>
                             
-                            <li className="nav-item dropdown ">
-                                <a className="nav-link dropdown-toggle fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown" 
-                                   href="home" 
-                                   id="navbarDropdown" 
-                                   role="button" 
-                                   data-bs-toggle="dropdown" 
-                                   aria-expanded="false">
-                                    Productos
-                                </a>
-                                <ul className="dropdown-menu bg-dark" 
-                                    aria-labelledby="navbarDropdown">
+                            <Nav.Link>
+                                <Link to='/servicios' className="text-decoration-none fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown"
+                                    data-wow-delay="0.4s">
+                                    Servicios
+                                </Link>
+                            </Nav.Link>
 
-                                    {/* <Link to='/productos/maquillaje' */}
-                                          {/* className="text-decoration-none">     */}
-                                        <li>
-                                            <Link to='/productos/maquillaje' className="dropdown-item  text-decoration-none text-white hoverOpciones" href="test">
-                                                Maquillaje
-                                            </Link>
-                                        </li>
-                                    {/* </Link> */}
 
-                                    {/* <Link to='/productos/uñas' className="text-decoration-none"> */}
-                                        <li>
-                                            <Link to='/productos/uñas' className="dropdown-item text-decoration-none text-white hoverOpciones" href="test">
-                                                Uñas
-                                            </Link>
-                                        </li>
-                                    {/* </Link> */}
-                                </ul>
-                            </li>
-
-                            {/* <Link to='/galeria' className="text-decoration-none"> */}
-                                <li className="nav-item">
-                                    <Link to='/galeria' className="nav-link text-decoration-none fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown"
-                                       href="html/galeria.html" 
-                                       data-wow-delay="0.6s">
-                                        Galería
+                            <NavDropdown title="Productos"
+                                        id="basic-nav-dropdown">
+                                            
+                                <NavDropdown.Item className='hoverOpciones'>
+                                    <Link to='/productos/maquillaje' className='text-decoration-none text-white'>
+                                        Maquillaje
                                     </Link>
-                                </li>
-                            {/* </Link> */}
-
-                            {/* <Link to='/contacto' className="text-decoration-none"> */}
-                                <li className="nav-item">
-                                    <Link to='/contacto' className="nav-link text-decoration-none fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown"
-                                       href="html/contacto.html" 
-                                       data-wow-delay="0.6s">
-                                        Contacto
+                                </NavDropdown.Item>
+                                <NavDropdown.Item className='hoverOpciones'>
+                                    <Link to='/productos/uñas' className="text-decoration-none text-white">
+                                        Uñas
                                     </Link>
-                                </li> 
-                            {/* </Link> */}
+                                </NavDropdown.Item>
+                            </NavDropdown>
 
-                            <Link to='/cart'>
-                                <li>
+                            <Nav.Link>
+                                <Link to='/galeria' className="text-decoration-none fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown" 
+                                    data-wow-delay="0.6s">
+                                    Galería
+                                </Link>
+                            </Nav.Link>
+
+                            <Nav.Link>
+                                <Link to='/contacto' className="text-decoration-none fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown"
+                                    data-wow-delay="0.6s">
+                                    Contacto
+                                </Link>
+                            </Nav.Link>
+
+                            <Nav.Link id='IdCart'>
+                                <Link to='/cart'>
                                     < CartWidget />
-                                </li>
-                            </Link>
+                                </Link>
+                            </Nav.Link>
 
-                        </ul>
-
-                    </div>
-                    
+                        </Nav>
+                    </Navbar.Collapse>
                 </Container>
-            </nav>
-        </header>
+            </Navbar>
+        </>
     )
 }
 

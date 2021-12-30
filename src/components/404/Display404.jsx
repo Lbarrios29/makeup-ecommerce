@@ -1,5 +1,4 @@
 import React from 'react'
-// import NavBar from '../NavBar/NavBar'
 import './404.css'
 
 function Display404() {
@@ -8,7 +7,6 @@ function Display404() {
 
         <>
             <div className="parallaxStars">
-                {/* <!-- Estrellas parallax --> */}
                 <div id='stars'></div>
                 <div id='stars2'></div>
                 <div id='stars3'></div>

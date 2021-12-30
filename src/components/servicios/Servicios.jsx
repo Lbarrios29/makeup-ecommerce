@@ -3,9 +3,9 @@ import Makeup from '../../images/servicios/makeup.png'
 import Cejas from "../../images/servicios/cejas.png"
 import Pestana from '../../images/servicios/pestana.png'
 import Unas from "../../images/servicios/unas.png"
-import './servicios.css'
-import { Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import { Container } from 'react-bootstrap'
+import './servicios.css'
 
 function Servicios() {
     
@@ -19,8 +19,6 @@ function Servicios() {
                 <h1 className="text-center pb-3 wow animate__animated animate__fadeInUp">
                     Nuestros Servicios
                 </h1>
-                
-                {/* <div className="separador"></div> */}
 
                 <Container fluid="sm" className='py-3'>
 
@@ -46,10 +44,7 @@ function Servicios() {
                                 <div className='mt-2'>
                                     <Link to="/display404" className="text-decoration-none p-2 rounded linkServicios text-decoration-none wow animate__animated
                                             animate__fadeInUp" data-wow-delay="0.2">
-                                        {/* <a id="idServicioMakeup" href="servicioMakeup.html" className="p-2 rounded linkServicios text-decoration-none wow animate__animated
-                                            animate__fadeInUp" data-wow-delay="0.2"> */}
-                                            Ver mas...
-                                        {/* </a> */}
+                                        Ver mas...
                                     </Link>
                                 </div>
                             </p>
@@ -69,10 +64,8 @@ function Servicios() {
                     <div className="flexCejas">
                         <div className="boxServicios">
                             <Link to="/display404" className='text-decoration-none'>
-                                {/* <a href="servicioMakeup.html"> */}
-                                    <img src={Cejas} alt="Tratamiento de Cejas" loading="lazy"
-                                        className="img-fluid rounded wow animate__animated animate__zoomIn"/>
-                                {/* </a> */}
+                                <img src={Cejas} alt="Tratamiento de Cejas" loading="lazy"
+                                    className="img-fluid rounded wow animate__animated animate__zoomIn"/>
                             </Link>
                         </div>
 
@@ -96,10 +89,7 @@ function Servicios() {
                                 <div className='mt-2'>
                                     <Link to="/display404" className="p-2 rounded linkServicios text-decoration-none wow animate__animated
                                         animate__fadeInUp" data-wow-delay="0.2s">
-                                    {/* <a href="servicioMakeup.html" className="p-2 rounded linkServicios text-decoration-none wow animate__animated
-                                        animate__fadeInUp" data-wow-delay="0.2s"> */}
                                         Ver mas...
-                                    {/* </a> */}
                                     </Link>
                                 </div>
                             </p>
@@ -127,10 +117,7 @@ function Servicios() {
                                 <div className='mt-2'>
                                     <Link to="/display404" className="text-decoration-none p-2 rounded linkServicios text-decoration-none wow animate__animated
                                             animate__fadeInUp" data-wow-delay="0.2s">
-                                        {/* <a href="servicioMakeup.html" className="p-2 rounded linkServicios text-decoration-none wow animate__animated
-                                            animate__fadeInUp" data-wow-delay="0.2s"> */}
                                             Ver mas...
-                                        {/* </a> */}
                                     </Link>
                                 </div>
                             </p>
@@ -138,10 +125,8 @@ function Servicios() {
 
                         <div className="boxServicios">
                             <Link to="/display404" className='text-decoration-none'>
-                                {/* <a href="servicioMakeup.html"> */}
                                     <img src={Pestana} alt="Tratamiento de Pestañas" loading="lazy"
                                         className="img-fluid rounded wow animate__animated animate__zoomIn"/>
-                                {/* </a> */}
                             </Link>
                         </div>
                     </div>
@@ -150,10 +135,8 @@ function Servicios() {
                     <div className="flexUnas">
                         <div className="boxServicios">
                             <Link to="/display404" className='text-decoration-none'>
-                                {/* <a href="servicioMakeup.html"> */}
                                     <img src={Unas} alt="Tratamiento de Uñas" loading="lazy"
                                         className="img-fluid rounded wow animate__animated animate__zoomIn"/>
-                                {/* </a> */}
                             </Link>
                         </div>
 
@@ -171,10 +154,7 @@ function Servicios() {
                                 <div className='mt-2'>
                                     <Link to="/display404" className="text-decoration-none p-2 rounded linkServicios text-decoration-none wow animate__animated
                                         animate__fadeInUp" data-wow-delay="0.2s">
-                                    {/* <a href="servicioMakeup.html" className="p-2 rounded linkServicios text-decoration-none wow animate__animated
-                                        animate__fadeInUp" data-wow-delay="0.2s"> */}
                                         Ver mas...
-                                    {/* </a> */}
                                     </Link>
                                 </div>
                             </p>
@@ -184,7 +164,6 @@ function Servicios() {
                 </Container>
 
             </main>
-            {/* <div className="separador"></div> */}
         </>
     
     )

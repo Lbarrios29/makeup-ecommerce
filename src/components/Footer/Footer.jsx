@@ -27,7 +27,6 @@ function Footer() {
                             <div className="mb-2 mb-lg-3">
                                 <a href="mailto:info@gmail.com" className="text-decoration-none textoFooter" target="_blank"
                                     rel="noopener noreferrer">
-                                    {/* <i className="bi bi-envelope"></i> */}
                                     <BsEnvelope className="me-1"/>
                                     info@gmail.com
                                 </a>
@@ -35,7 +34,6 @@ function Footer() {
                             <div className="mb-4">
                                 <a href="https://api.whatsapp.com/send?phone=5411618107&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Makeup."
                                     className="text-decoration-none textoFooter" target="_blank" rel="noopener noreferrer">
-                                    {/* <i className="bi bi-telephone"></i> */}
                                     <BsTelephone className="me-1"/>
                                     +541116235478
                                 </a>
@@ -51,43 +49,33 @@ function Footer() {
                             
                             <div className="mb-2 mb-lg-3 ">
                                 <Link to='/home' className="text-decoration-none textoFooter">
-                                    {/* <a href="index.html" className=" text-decoration-none textoFooter"> */}
-                                        Home
-                                    {/* </a> */}
+                                    Home
                                 </Link>    
                             </div>
 
                             
                             <div className="mb-2 mb-lg-3 ">
                                 <Link to='/nosotros' className="text-decoration-none textoFooter">
-                                    {/* <a href="html/nosotros.html" className=" text-decoration-none textoFooter"> */}
-                                        Nosotros
-                                    {/* </a> */}
+                                    Nosotros
                                 </Link>    
                             </div>
 
                             
                             <div className="mb-2 mb-lg-3 ">
                                 <Link to='/servicios' className="text-decoration-none textoFooter">
-                                    {/* <a href="html/servicios.html" className=" text-decoration-none textoFooter"> */}
-                                        Servicios
-                                    {/* </a> */}
+                                    Servicios
                                 </Link>    
                             </div>
 
                             <div className="mb-2 mb-lg-3 ">
                                 <Link to='/galeria' className="text-decoration-none textoFooter">
-                                    {/* <a href="html/galeria.html" className=" text-decoration-none textoFooter"> */}
-                                        Galería
-                                    {/* </a> */}
+                                    Galería
                                 </Link>    
                             </div>
 
                             <div className="mb-4 ">
                                 <Link to='/contacto' className="text-decoration-none textoFooter">
-                                    {/* <a href="html/contacto.html" className=" text-decoration-none textoFooter"> */}
-                                        Contacto
-                                    {/* </a> */}
+                                    Contacto
                                 </Link>
                             </div>
                         </div>
@@ -101,7 +89,6 @@ function Footer() {
                                 <a href="https://www.facebook.com/Elidiazmkp-102206465077886/about/?ref=page_internal"
                                     className="me-1  text-decoration-none textoFooter" target="_blank"
                                     rel="noopener noreferrer">
-                                    {/* <i className="bi bi-facebook"></i> */}
                                     <BsFacebook className="me-1"/>
                                     Facebook
                                 </a>
@@ -110,7 +97,6 @@ function Footer() {
                             <div className="mb-2 mb-lg-3 ">
                                 <a href="https://twitter.com/?lang=es" className="me-1  text-decoration-none textoFooter"
                                     target="_blank" rel="noopener noreferrer">
-                                    {/* <i className="bi bi-twitter"></i> */}
                                     <BsTwitter className="me-1"/>
                                     Twitter
                                 </a>
@@ -120,7 +106,6 @@ function Footer() {
                                 <a href="https://www.instagram.com/elidiazmkp/"
                                     className="me-1  text-decoration-none textoFooter" target="_blank"
                                     rel="noopener noreferrer">
-                                    {/* <i className="bi bi-instagram"></i> */}
                                     <BsInstagram className="me-1"/>
                                     Instagram
                                 </a>
@@ -129,7 +114,6 @@ function Footer() {
                             <div className="mb-2 mb-lg-3 ">
                                 <a href="https://ar.linkedin.com/" className="me-1  text-decoration-none textoFooter"
                                     target="_blank" rel="noopener noreferrer">
-                                    {/* <i className="bi bi-linkedin"></i> */}
                                     <BsLinkedin className="me-1"/>
                                     Linkedin
                                 </a>

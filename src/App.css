@@ -18,6 +18,10 @@ h3 {
   color: #525151;
 }
 
+h5 {
+  color: #525151;
+}
+
 p {
   line-height: 1.5;
   font-size: 17px;
@@ -45,6 +49,19 @@ p {
 
 .stockPadding {
   padding-left: 60px;
+}
+
+.cartBoxContact{
+  width: 40%;
+  margin-left: 30%;
+}
+
+#basic-nav-dropdown{
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
 }
 
 /**$*$********************************************************************
@@ -80,30 +97,15 @@ p {
     padding-left: 30px;
   }
 
+  .cartBoxContact {
+    width: 50%;
+    margin-left: 30%;
+  }
+
 }
 
 /*TELEFONOS - DISPOSITIVOS XS*/
 @media screen and (max-width: 600px) {
-  /* .indexFoto1 {
-    background: url("../images/index/img1_cel.png") no-repeat center center/cover fixed;
-  }
-
-  .indexFoto2 {
-    background: url("../images/index/indexPestania_cel.png") no-repeat center center/cover fixed;
-  }
-
-  .indexFoto3 {
-    background: url("../images/index/img3_cel.png") no-repeat center center/cover fixed;
-  }
-
-  .indexFoto4 {
-    background: url("../images/index/indexUltimo_cel.png") no-repeat center center/cover fixed;
-  } */
-
-  /* .containerFormulario {
-    width: 90%;
-    height: auto;
-  } */
 
   #imgFounder {
     margin-left: 20px;
@@ -165,15 +167,6 @@ p {
     height: auto;
   }
 
-  /* .boxFormulario {
-    width: 90%;
-    height: auto;
-  }
-
-  .containerFormulario {
-    background: white;
-  } */
-
   .title {
     top: 50%;
   }
@@ -217,17 +210,26 @@ p {
     width: 100% !important;
   }
 
-.cartCountwidth {
-  width: 100%;
-}
+  .cartCountwidth {
+    width: 100%;
+  }
 
-.nombreProductoCart {
-  font-size: 1rem;
-}
+  .nombreProductoCart {
+    font-size: 1rem;
+  }
 
-.stockPadding{
-  padding-left: 20px;
-}
+  .stockPadding{
+    padding-left: 20px;
+  }
+
+  .cartBoxContact {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .cartBoxContact--button {
+    width: 100%;
+  }
 
 }
 

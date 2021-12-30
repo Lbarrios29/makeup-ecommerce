@@ -2,12 +2,8 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getProductById } from '../../../Firebase/firebase';
-// import productoService from '../../../data/productoService';
-// import { db } from '../../../Firebase/firebase';
-
-// import getProductFiltered from '../../../Firebase/firebase';
-// import { getProductos } from '../../../utils/getProductos'
+import productoService from '../../../data/productoService';
+import { db } from '../../../Firebase/firebase';
 import ItemDetail from '../ItemDetail/ItemDetail';
 
 function ItemDetailContainer() {
@@ -15,14 +11,15 @@ function ItemDetailContainer() {
     const [itemSeleccionado, setItemSeleccionado]= useState({}); 
     const [loading, setLoading] = useState(true);
 
-    const { id } = useParams(); //toma el parametro de la url y lo guarda en una variable id.
+    //toma el parametro de la url y lo guarda en una variable id.
+    const { id } = useParams(); 
 
+    // Obtiene el producto seleccionado del catalogo
     useEffect(async () => {
 
         try {
 
-            const item = await getProductById('productos',id)
-            // const item = await productoService.getProductById('productos',id,db)
+            const item = await productoService.getProductById(id,db)
             setItemSeleccionado(item)
         
         }

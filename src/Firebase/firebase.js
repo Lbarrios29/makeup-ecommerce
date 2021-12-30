@@ -1,8 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs, query, where,doc,getDoc } from 'firebase/firestore';
-
-// Follow this pattern to import other Firebase services
-// import { } from 'firebase/<service>';
+import { getFirestore    } from 'firebase/firestore';
 
 // TODO: Replace the following with your app's Firebase project configuration
 const firebaseConfig = {
@@ -21,34 +18,3 @@ const app = initializeApp(firebaseConfig);
 
 // Obtiene la conexion a bd
 export const db = getFirestore(app);
-
-async function getProductFiltered(tabla,field, operator,condition) {
-
-    // Obtiene la coleccion a tratar
-    // const productosCol = collection(db, 'productos');
-
-    // Obtiene los documentos de la coleccion sin filtro(todo)
-    // const productoSnapshot = await getDocs( productosCol );
-
-    // Create a query against the collection.
-    const buildQuery = query(collection(db, `${tabla}`), where(`${field}`, `${operator}`, `${condition}`));
-
-    // Obtiene los documentos filtrados
-    const productoSnapshot = await getDocs( buildQuery );
-    
-    // Obtiene los documentos en un array
-    const productoList = productoSnapshot.docs.map(doc => ({ id:doc.id, ...doc.data() }));
-
-    return productoList;
-
-}
-
-export async function getProductById(tabla,id) {
-    
-    const productoSnap = await getDoc( doc( db, `${tabla}`, `${id}`) )
-
-    return { id:productoSnap.id, ...productoSnap.data() }
-
-}
-
-export default getProductFiltered
