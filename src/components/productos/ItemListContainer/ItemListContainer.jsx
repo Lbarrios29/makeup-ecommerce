@@ -1,11 +1,12 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { onAddShoppingCart } from '../../../utils/events'
+// import { onAddShoppingCart } from '../../../utils/events'
 import ItemList from '../ItemList/ItemList'
 import Display404 from '../../404/Display404'
 import productoService from '../../../data/productoService'
 import { db } from '../../../Firebase/firebase'
+import Loader from '../../Loader/Loader'
 
 function ItemListContainer() {
 
@@ -36,8 +37,8 @@ function ItemListContainer() {
     return (
         <>       
             { 
-                loading ? <h2>Cargando...</h2> 
-                        : productos.length > 0 ? <ItemList productos={productos} onAddShoppingCart={onAddShoppingCart}/>
+                loading ? <Loader/> 
+                        : productos.length > 0 ? <ItemList productos={productos} />
                                                : <Display404/>     
             }
         </>    

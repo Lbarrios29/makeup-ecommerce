@@ -5,6 +5,10 @@ import './item.css'
 
 function Item(props) {
 
+    /**
+        @todo:  Componente que renderiza cada producto
+    **/
+
     return (
 
         <div className="col">

@@ -4,6 +4,10 @@ import { Col } from 'react-bootstrap'
 
 function ItemListGaleria(props) {
 
+    /**
+        @todo:  Componente que pasa la coleccion de imagenes al componente ItemGaleria
+    **/
+
     return (
 
         // Llama a ItemGaleria para renderizar cada imagen y le pasa parametros   

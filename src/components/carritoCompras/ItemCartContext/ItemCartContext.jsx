@@ -5,8 +5,10 @@ import ItemListCart from '../ItemListCart/ItemListCart'
 
 function ItemCartContext() {
 
-    console.log("ItemCartContext")
-    
+    /**
+        @todo:  Contexto cuya responsabilidad es pasar los items a otro componente
+    **/
+
     const {cartList} = useCartContext()
 
     return (

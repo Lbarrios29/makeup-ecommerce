@@ -5,7 +5,10 @@ import { Link } from 'react-router-dom'
 
 function ItemListCart(props) {
     
-    console.log("ItemListCart")
+    /**
+        @todo:  Componente pasa cada item al componente Cart ademas de tener los 
+                botones Iniciar y Vaciar carrito
+    **/
 
     const {vaciarCarrito,calcularTotal} = useCartContext()    
     let total = 0
@@ -56,8 +59,6 @@ function ItemListCart(props) {
                         
                     <Link to='/formularioCompra'>
                         <button type="button" 
-                                // onClick={onTerminarCompra} 
-                                // onSubmit={onTerminarCompra}
                                 className="btn btn-dark">
                             Iniciar compra
                                     

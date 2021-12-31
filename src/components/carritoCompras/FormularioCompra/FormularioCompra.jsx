@@ -7,9 +7,15 @@ import { Button, Container, Form } from 'react-bootstrap'
 
 function FormularioCompra() {
 
-    console.log("TerminarCompra")
+    /**
+        @todo:  Componente que muestra un formulario de contacto donde el usuario
+                completa nombre,email,telefono, direccion como obligatorio previamente
+                a comprar.
+    **/
+
     const {cartList, calcularTotal,terminarCompra,setIOrderId} = useCartContext();
 
+    // Devuele la orden a grabar en db Firebase
     const fillOrder = (evt) =>{
 
         let nombre="";
@@ -17,7 +23,7 @@ function FormularioCompra() {
         let telefono="";
         let email="";   
 
-        // Obtiene los valores del formulario
+        // Obtiene los valores del formulario por Id del elemento
         for (let index = 0; index < evt.target.length; index++) {
             
             switch (evt.target[index].id) {
@@ -48,7 +54,7 @@ function FormularioCompra() {
 
         }
 
-        // Build Order
+        // Arma la orden con los items seleccionados, mas los datos del usuario para grabarlo en bd
         const order = { }
         order.date = new Date();
         order.buyer = { nombre, direccion, telefono, email }
@@ -66,6 +72,8 @@ function FormularioCompra() {
 
     }
 
+    // Manejador del evento submit del boton Comprar que su responsabilidad
+    // es la de crear la orden del usuario en Firebase
     const handleSubmit = async (evt) => {
         
         console.log("handleSubmit");
@@ -135,8 +143,7 @@ function FormularioCompra() {
             </Container>
             <div className='separador'></div>  
             {
-                cartList.length === 0 &&  <Navigate replace to="/terminarCompra" /> 
-                
+                cartList.length === 0  && <Navigate replace to="/terminarCompra" /> 
             } 
 
         </>

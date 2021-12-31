@@ -5,6 +5,10 @@ import './footer.css'
 
 function Footer() {
 
+    /**
+        @todo:  Pie de pagina con enlaces a las secciones, redes sociales
+    **/
+
     return (
     
             // <!-- Footer -->

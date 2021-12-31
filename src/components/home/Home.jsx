@@ -6,6 +6,12 @@ import background3 from '../../images/index/img3.png'
 import background4 from '../../images/index/indexUltimo.png'
 
 function Home() {
+
+    /**
+        @todo:  Componente Home que muestra la esencia de este sitio
+                con las tematicas y propuestas que provee
+    **/
+
     return (
         <>
             <div class="separador"></div>

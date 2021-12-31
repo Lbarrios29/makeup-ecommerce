@@ -2,20 +2,25 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { getGaleria } from '../../../utils/getGaleria'
 import ItemListGaleria from '../ItemListGaleria/ItemListGaleria'
+import Loader from '../../../components/Loader/Loader'
 import { Container, Row } from 'react-bootstrap'
 import '../../galeria/galeria.css'
 
 function GaleriaListContainer() {
 
+    /**
+        @todo:  Componente Context que muestra galeria de imagenes
+    **/
+
     const [galeria, setGaleria] = useState([])
     const [loading, setLoading] = useState(true)
 
+    // Obtiene las imagenes
     useEffect(() => {
 
         getGaleria    
             .then(data => {   
                     setGaleria(data)   
-                    console.log(data)  
             })
             .catch(err => console.log(err))    
             .finally(()=> setLoading(false))
@@ -37,7 +42,7 @@ function GaleriaListContainer() {
                         <Row className="gy-3">
                             
                             { 
-                                loading ?   <h2>Cargando...</h2> 
+                                loading ?   <Loader/>
                                         :   <ItemListGaleria galeria={galeria}/>
                             }
                             

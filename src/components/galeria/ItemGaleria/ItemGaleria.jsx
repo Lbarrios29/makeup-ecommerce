@@ -2,6 +2,11 @@ import React from 'react'
 import '../../galeria/galeria.css'
 
 function ItemGaleria(props) {
+
+    /**
+        @todo:  Componente renderiza cada imagen
+    **/    
+
     return (
 
         <div className="box wow animate__animated animate__fadeInUp" 

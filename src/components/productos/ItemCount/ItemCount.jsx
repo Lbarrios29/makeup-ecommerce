@@ -3,8 +3,10 @@ import { useCartContext } from '../../../context/CartContext'
 
 function ItemCount(props) {
 
-    console.log("ItemCount");
-    console.log(props);
+    /**
+        @todo:  Componente que renderiza el contador +/- para aumentar
+				o disminuir la cantidad
+    **/	
 
 	const { cartList, setCartList,itemsCounter, setItemsCounter } = useCartContext()
 	const [cant, setCant] = useState(props.initial);
@@ -20,8 +22,6 @@ function ItemCount(props) {
 	}, [props.initial] )
 
 	function sumar() {
-
-		console.log("Sumar");
 		
         if (cant < props.stock) {
 
@@ -40,8 +40,6 @@ function ItemCount(props) {
 	}
 
 	function restar() {
-
-		console.log("Restar");
 
 		if (cant > 1) {
 		

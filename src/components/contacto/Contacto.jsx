@@ -4,6 +4,10 @@ import './contacto.css'
 
 function Contacto() {
 
+    /**
+        @todo:  Formulario de contacto y suscripcion a newsletter
+    **/
+
     return (
         <>
             <div class="separador"></div>

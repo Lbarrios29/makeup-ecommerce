@@ -6,6 +6,12 @@ import Logo from "./images/logodiaz.png";
 import '../NavBar/navBar.css';
 
 function NavBar() {
+
+    /**
+        @todo:  Componente que muestra las seccciones del sitio mas el
+                carrito para visualizar los items seleccionados
+    **/
+
     return (
          <>       
             <Navbar bg="dark" expand="lg">
@@ -19,7 +25,7 @@ function NavBar() {
                         </Link>
                     </Navbar.Brand>
                     
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" id='customBurger' />
                     
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">

@@ -20,8 +20,7 @@ function ItemList(props) {
                             { 
                                 // Llama a Itemproducto para renderizar cada imagen y le pasa parametros   
                                 props.productos.map(producto => <Item key={producto.id}
-                                                                    producto={producto}
-                                                                    onAddShoppingCart={props.onAddShoppingCart}/>)   
+                                                                      producto={producto}/>)   
                             }
 
                         </div>

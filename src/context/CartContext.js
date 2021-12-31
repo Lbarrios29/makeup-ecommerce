@@ -17,10 +17,21 @@ function CartContextProvider({ children }) {
 		console.log("agregarProducto");
 		let index = isInCart(item.item.id);
 
-		// Si existe el item no lo agrega de nuevo
+		// Si no existe el item lo agrega
 		if (index < 0) {
+
 			setCartList([...cartList, item]);
-			setItemsCounter(itemsCounter + item.cantidad)
+			setItemsCounter(itemsCounter + item.cantidad);
+		
+		}
+		// Si existe suma la cantidad en el counter e item
+		else{
+		
+			setItemsCounter(itemsCounter + item.cantidad);
+			let auxCarrito = cartList;
+			auxCarrito[index].cantidad += item.cantidad;
+			setCartList(auxCarrito); 
+		
 		}
 
 	};
@@ -70,7 +81,7 @@ function CartContextProvider({ children }) {
 
         let total = 0
         for (let index = 0; index < items.length; index++) {        
-            total += items[index].item.precio * parseInt(items[index].cantidad) 
+            total += items[index].item.precio * parseInt(items[index].cantidad); 
         }
         return total
 

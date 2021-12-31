@@ -3,7 +3,11 @@ import { useCartContext } from '../../context/CartContext'
 
 function CartWidget() {
 
-    const { itemsCounter } = useCartContext()
+    /**
+        @todo:  Componente que muestra el icono carrito
+    **/
+
+    const { itemsCounter } = useCartContext();
 
     return (
 

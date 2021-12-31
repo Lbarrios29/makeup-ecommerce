@@ -6,25 +6,28 @@ import './itemDetail.css'
 
 function ItemDetail(props) {
 
-    console.log("ItemDetail")
+    /**
+        @todo:  Componente que se visualiza al seleccionar un item
+    **/
+
     const { agregarProducto } = useCartContext()
     const [count, setCount] = useState(1)    
     const [button, setButton] = useState('AgregarCarrito')
 
     function onAddCart(cant) {
 
-        console.log("onAddCart")
         setCount(cant)
         setButton('CheckoutCarrito')
         agregarProducto( { item:props.item, cantidad:cant } )
-        console.log({ item:props.item, cantidad:cant })
     
     }
 
+    // Agrega cantidad
     function onAdd(cant) {
         setCount(cant)
     }
 
+    // Agrea el item seleccionado al carrito
     const AgregarCarrito = () => {
 
         return (
@@ -48,6 +51,7 @@ function ItemDetail(props) {
 
     }
 
+    // Arma el checkout del carrito
     const CheckoutCarrito = () => {
 
         return (

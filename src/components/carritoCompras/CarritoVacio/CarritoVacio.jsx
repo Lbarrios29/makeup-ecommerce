@@ -2,6 +2,12 @@ import React from 'react'
 import { Container } from 'react-bootstrap'
 
 function CarritoVacio() {
+
+    /**
+        @todo:  Componente que visualiza mostranso un texto 
+                cuando el carrito de compras esta vacio
+    **/
+
     return (
 
         <>

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import productoService from '../../../data/productoService';
 import { db } from '../../../Firebase/firebase';
+import Loader from '../../Loader/Loader';
 import ItemDetail from '../ItemDetail/ItemDetail';
 
 function ItemDetailContainer() {
@@ -40,7 +41,7 @@ function ItemDetailContainer() {
             <div className="container container-sm container-md container-lg">
 
                 {
-                    loading ? <h2>Cargando...</h2> 
+                    loading ? <Loader/>
                             : <ItemDetail item={itemSeleccionado}/>
                 }
 

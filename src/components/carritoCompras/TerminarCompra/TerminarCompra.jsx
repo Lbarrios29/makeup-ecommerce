@@ -5,6 +5,11 @@ import { Container } from 'react-bootstrap'
 
 function TerminarCompra() {
 
+    /**
+        @todo:  Componente que muestra mensaje de exito y la orden generada
+                obtenida de Firebase al finalizar la compra
+    **/
+
     const {orderId} = useCartContext();
 
     return (

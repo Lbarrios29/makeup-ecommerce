@@ -3,6 +3,11 @@ import './404.css'
 
 function Display404() {
 
+    /**
+        @todo:  Componente 404 en caso de no estar operativo algun link
+                muestra este componente
+    **/
+   
     return (
 
         <>

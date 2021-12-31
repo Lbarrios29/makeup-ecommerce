@@ -5,6 +5,11 @@ import Emp2 from '../../images/nosotros/emp2.png'
 import Emp3 from '../../images/nosotros/emp3.png'
 
 function Nosotros() {
+
+    /**
+        @todo:  Componente que describe brevemente la empresa
+    **/
+
     return (
 
         <>
