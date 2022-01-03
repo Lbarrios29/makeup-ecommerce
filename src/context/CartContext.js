@@ -8,9 +8,9 @@ export const useCartContext = () => useContext(CartContext);
 function CartContextProvider({ children }) {
 
 	const [cartList, setCartList] = useState([]);
+	// const [count, setCount] = useState(1);
 	const [idDelete, setIdDelete] = useState(1);
-	const [itemsCounter, setItemsCounter] = useState(0);
-	const [orderId, setIOrderId] = useState(0);
+	const [itemsCounter, setItemsCounter] = useState(0)
 
 	const agregarProducto = (item) => {
 
@@ -66,16 +66,6 @@ function CartContextProvider({ children }) {
 
 	}
 
-	function calcularTotal(items) {
-
-        let total = 0
-        for (let index = 0; index < items.length; index++) {        
-            total += items[index].item.precio * parseInt(items[index].cantidad) 
-        }
-        return total
-
-    }
-
 	return (
 
 		<CartContext.Provider value={{  cartList,
@@ -83,14 +73,13 @@ function CartContextProvider({ children }) {
                                         setCartList,
                                         vaciarCarrito,
                                         eliminarItem,
+                                        // count,
+                                        // setCount,
                                         idDelete,
                                         setIdDelete,
 										itemsCounter,
 										setItemsCounter,
-										terminarCompra,
-										orderId,
-										setIOrderId,
-										calcularTotal }}>
+										terminarCompra }}>
 			{children}
 		</CartContext.Provider>
 

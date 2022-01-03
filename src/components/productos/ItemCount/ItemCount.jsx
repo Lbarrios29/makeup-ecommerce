@@ -60,6 +60,7 @@ function ItemCount(props) {
 
 	return (
 
+		// <div className="h6 qtyBox d-flex align-items-center justify-content-around border w-75">
 		<div className="h6 qtyBox d-flex align-items-center justify-content-around border w-100">	
 			<div
 				className="btnQty qtyMinus fs-3 ps-3 text-muted"

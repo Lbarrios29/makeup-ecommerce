@@ -1,5 +1,6 @@
 import React from 'react'
 import Cart from '../Cart/Cart'
+// import { onAddComprarAhora } from '../../../utils/events'
 import { useCartContext } from '../../../context/CartContext'
 import { Link } from 'react-router-dom'
 
@@ -7,11 +8,36 @@ function ItemListCart(props) {
     
     console.log("ItemListCart")
 
-    const {vaciarCarrito,calcularTotal} = useCartContext()    
+    const {vaciarCarrito, terminarCompra} = useCartContext()
     let total = 0
 
     function onClearCart() {
         vaciarCarrito()
+    }
+
+    function calcularTotal(items) {
+
+        let total = 0
+        for (let index = 0; index < items.length; index++) {        
+            total += items[index].item.precio * parseInt(items[index].cantidad) 
+        }
+        return total
+
+    }
+
+    function onTerminarCompra(e) {
+
+        e.preventDefault()
+        // const orden = { }
+        // ondragend.date = 
+        // orden.buyer = { nombre: "luis", telefono: "1162548796", email: "luis@gmail.com" }
+        // orden.total = calcularTotal(props.items)
+        // orden.items = props.items.map(cartItem=>{
+        //     return {id: cartItem.id, nombre: cartItem.nombre, precio:cartItem.precio}
+        // })
+        // console.log(orden)
+        terminarCompra()
+    
     }
 
     // Calcula el total
@@ -54,12 +80,12 @@ function ItemListCart(props) {
                         Vaciar carrito
                     </button>
                         
-                    <Link to='/formularioCompra'>
+                    <Link to='/terminarCompra'>
                         <button type="button" 
-                                // onClick={onTerminarCompra} 
+                                onClick={onTerminarCompra} 
                                 // onSubmit={onTerminarCompra}
                                 className="btn btn-dark">
-                            Iniciar compra
+                            Terminar compra
                                     
                         </button>
                     </Link>
